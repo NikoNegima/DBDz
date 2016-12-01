@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Prueba Registro</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Registro al sistema de voluntarios.</h1>
+		</div>
+	</div>
+	<div class="container">
+		<form action="" class="form-horizontal">
+			<!-- Espacio para el texto: Nombre -->
+			<div class="form-group">
+				<label for="nombre" class="control-label col-md-2">Nombre:</label>
+				<div class="col-md-10">
+					<input type="text" id="nombre" class="form-control" placeholder="Nombre:">
+				</div>
+			</div>	
+			<div class="form-group">
+				<!-- Espacio para el texto: Apellidos -->
+				<label for="apaterno" class="control-label col-md-2">Apellido Paterno:</label>
+				<div class="col-md-10">
+					<input type="text" id="apaterno" class="form-control" placeholder="Apellido Paterno:">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="amaterno" class="control-label col-md-2">Apellido Materno</label>
+				<div class="col-md-10">
+					<input type="text" id="amaterno" class="form-control" placeholder="Apellido Materno:">
+				</div>
+			</div>
+
+			<!-- Espacio para el texto: Edad -->
+			<div class="form-group">
+				<label for="edad" class="control-label col-md-2">Edad: </label>
+				<div class="col-md-10">
+					<input type="text" id="edad" class="form-control" placeholder="Edad:">
+				</div>
+			</div>
+			
+
+			<!-- Contacto: Telefono y Email(hacer como tuto) y con +569 -->
+			<div class="form-group">
+				<label for="telefono" class="control-label col-md-2">Telefono:</label>
+				<div class="col-md-10">
+					<div class="input-group">
+						<div class="input-group-addon">+569</div>
+						<input class="form-control" type="text" id="telefono" placeholder="Telefono:">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="correo" class="control-label col-md-2">Correo:</label>
+				<div class="col-md-10">
+					<div class="input-group">
+						<input type="text" id="correo1" class="form-control" placeholder="">
+						<div class="input-group-addon">@</div>
+						<input type="text" id="correo2" class="form-control">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<!-- Combobox: Region y Comuna y Direccion-->
+				<label for="region" class="control-label col-md-2">Region:</label>
+				<div class="col-md-10">
+					<select name="" class="form-control" id="region">
+						<option value="">I Region</option>
+						<option value="">II Region</option>
+						<option value="">III Region</option>
+						<option value="">IV Region </option>
+						<option value="">V Region</option>
+						<option value="">VI Region</option>
+						<option value="">VII Region </option>
+						<option value="">VIII Region</option>
+						<option value="">IX Region</option>
+						<option value="">X Region</option>
+						<option value="">XI Region</option>
+						<option value="">XII Region</option>
+						<option value="">XIII Region</option>
+						<option value="">XIV Region</option>
+						<option value="">RM Region</option>
+					</select>
+				</div>
+			</div>
+				
+			<div class="form-group">
+				<label for="comuna" class="control-label col-md-2">Comuna: </label>
+				<div class="col-md-10">
+					<input type="text" id="comuna" class="form-control", placeholder="Comuna:">
+				</div>
+			</div>
+				
+			<div class="form-group">
+				<label for="direc" class="control-label col-md-2">Direccion:</label>
+				<div class="col-md-10">
+					<input type="text" id="direc" class="form-control" placeholder="Direccion:">
+				</div>
+			</div>
+			
+			
+
+			<br>
+			<!-- Checkbox: Disponibilidad -->
+
+			<div class="form-group">
+					<div class="">
+						<label for="dispo" class="control-label col-md-2">Disponibilidad Actual:</label>
+						<div class="col-md-1">
+							<input type="checkbox" name="Disponibilidad" id="disp">
+						</div>
+						<p class="help-block col-md-8">Si esta disponible ahora, marque la casilla.</p>
+
+
+					</div>
+				</div>
+				<br>
+			</div>
+			<!-- Boton de enviar -->
+
+			<div class="form-group">
+				<div class="col-md-2 col-md-offset-6">
+					<button id="enviar" class="btn btn-primary">Enviar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>	
+</body>
+</html>
