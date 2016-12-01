@@ -5502,3 +5502,258 @@ Stack Trace:
 
 
 2016-12-01 19:32:53 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:04:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:04:48 Error: [PDOException] SQLSTATE[HY000] [2002] No such file or directory
+Request URL: /users/login
+Referer URL: http://localhost:8765/users/login
+Stack Trace:
+#0 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'planta', 'carnivora', Array)
+#1 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Connection.php(322): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(439): Cake\Database\Connection->schemaCollection()
+#8 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(211): Cake\ORM\Table->schema()
+#9 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(168): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(1336): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(964): Cake\ORM\Table->query()
+#12 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(159): Cake\ORM\Table->find('all', Array)
+#13 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(107): Cake\Auth\BaseAuthenticate->_query('nroman')
+#14 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/FormAuthenticate.php(78): Cake\Auth\BaseAuthenticate->_findUser('nroman', 'nroman')
+#15 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php(789): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 /home/nikonegima/Escritorio/DBDz/src/Controller/UsersController.php(21): Cake\Controller\Component\AuthComponent->identify()
+#17 [internal function]: App\Controller\UsersController->login()
+#18 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#19 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(122): Cake\Controller\Controller->invokeAction()
+#20 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(96): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#21 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#25 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#26 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#27 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#28 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#29 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#30 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#31 /home/nikonegima/Escritorio/DBDz/webroot/index.php(37): Cake\Http\Server->run()
+#32 {main}
+
+
+2016-12-01 20:04:51 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:05:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:05:19 Error: [PDOException] SQLSTATE[HY000] [2002] No such file or directory
+Request URL: /users/login
+Referer URL: http://localhost:8765/users/login
+Stack Trace:
+#0 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'planta', 'carnivora', Array)
+#1 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Connection.php(322): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(439): Cake\Database\Connection->schemaCollection()
+#8 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(211): Cake\ORM\Table->schema()
+#9 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(168): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(1336): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(964): Cake\ORM\Table->query()
+#12 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(159): Cake\ORM\Table->find('all', Array)
+#13 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(107): Cake\Auth\BaseAuthenticate->_query('ncage')
+#14 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/FormAuthenticate.php(78): Cake\Auth\BaseAuthenticate->_findUser('ncage', 'ncage')
+#15 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php(789): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 /home/nikonegima/Escritorio/DBDz/src/Controller/UsersController.php(21): Cake\Controller\Component\AuthComponent->identify()
+#17 [internal function]: App\Controller\UsersController->login()
+#18 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#19 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(122): Cake\Controller\Controller->invokeAction()
+#20 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(96): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#21 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#25 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#26 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#27 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#28 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#29 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#30 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#31 /home/nikonegima/Escritorio/DBDz/webroot/index.php(37): Cake\Http\Server->run()
+#32 {main}
+
+
+2016-12-01 20:05:22 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:09:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:09:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:09:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:09:31 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:09:32 Error: [PDOException] SQLSTATE[HY000] [2002] No such file or directory
+Request URL: /users/login
+Referer URL: http://localhost:8765/users/login
+Stack Trace:
+#0 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Connection.php(322): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(439): Cake\Database\Connection->schemaCollection()
+#8 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(211): Cake\ORM\Table->schema()
+#9 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(168): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(1336): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(964): Cake\ORM\Table->query()
+#12 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(159): Cake\ORM\Table->find('all', Array)
+#13 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(107): Cake\Auth\BaseAuthenticate->_query('nroman')
+#14 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/FormAuthenticate.php(78): Cake\Auth\BaseAuthenticate->_findUser('nroman', 'nroman')
+#15 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php(789): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 /home/nikonegima/Escritorio/DBDz/src/Controller/UsersController.php(21): Cake\Controller\Component\AuthComponent->identify()
+#17 [internal function]: App\Controller\UsersController->login()
+#18 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#19 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(122): Cake\Controller\Controller->invokeAction()
+#20 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(96): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#21 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#25 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#26 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#27 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#28 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#29 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#30 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#31 /home/nikonegima/Escritorio/DBDz/webroot/index.php(37): Cake\Http\Server->run()
+#32 {main}
+
+
+2016-12-01 20:09:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:09:32 Error: [PDOException] SQLSTATE[HY000] [2002] No such file or directory
+Request URL: /users/login
+Referer URL: http://localhost:8765/users/login
+Stack Trace:
+#0 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Connection.php(322): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(439): Cake\Database\Connection->schemaCollection()
+#8 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(211): Cake\ORM\Table->schema()
+#9 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(168): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(1336): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(964): Cake\ORM\Table->query()
+#12 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(159): Cake\ORM\Table->find('all', Array)
+#13 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(107): Cake\Auth\BaseAuthenticate->_query('nroman')
+#14 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/FormAuthenticate.php(78): Cake\Auth\BaseAuthenticate->_findUser('nroman', 'nroman')
+#15 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php(789): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 /home/nikonegima/Escritorio/DBDz/src/Controller/UsersController.php(21): Cake\Controller\Component\AuthComponent->identify()
+#17 [internal function]: App\Controller\UsersController->login()
+#18 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#19 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(122): Cake\Controller\Controller->invokeAction()
+#20 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(96): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#21 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#25 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#26 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#27 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#28 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#29 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#30 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#31 /home/nikonegima/Escritorio/DBDz/webroot/index.php(37): Cake\Http\Server->run()
+#32 {main}
+
+
+2016-12-01 20:09:37 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:10:03 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:10:03 Error: [PDOException] SQLSTATE[HY000] [2002] No such file or directory
+Request URL: /users/login
+Referer URL: http://localhost:8765/users/login
+Stack Trace:
+#0 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Connection.php(322): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(439): Cake\Database\Connection->schemaCollection()
+#8 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(211): Cake\ORM\Table->schema()
+#9 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(168): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(1336): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(964): Cake\ORM\Table->query()
+#12 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(159): Cake\ORM\Table->find('all', Array)
+#13 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(107): Cake\Auth\BaseAuthenticate->_query('nroman')
+#14 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/FormAuthenticate.php(78): Cake\Auth\BaseAuthenticate->_findUser('nroman', 'nroman')
+#15 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php(789): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 /home/nikonegima/Escritorio/DBDz/src/Controller/UsersController.php(21): Cake\Controller\Component\AuthComponent->identify()
+#17 [internal function]: App\Controller\UsersController->login()
+#18 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#19 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(122): Cake\Controller\Controller->invokeAction()
+#20 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(96): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#21 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#25 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#26 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#27 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#28 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#29 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#30 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#31 /home/nikonegima/Escritorio/DBDz/webroot/index.php(37): Cake\Http\Server->run()
+#32 {main}
+
+
+2016-12-01 20:10:10 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:11:33 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:11:33 Error: [PDOException] SQLSTATE[HY000] [2002] No such file or directory
+Request URL: /users/login
+Referer URL: http://localhost:8765/users/login
+Stack Trace:
+#0 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Database/Connection.php(322): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(439): Cake\Database\Connection->schemaCollection()
+#8 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(211): Cake\ORM\Table->schema()
+#9 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Query.php(168): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(1336): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/ORM/Table.php(964): Cake\ORM\Table->query()
+#12 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(159): Cake\ORM\Table->find('all', Array)
+#13 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(107): Cake\Auth\BaseAuthenticate->_query('nroman')
+#14 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Auth/FormAuthenticate.php(78): Cake\Auth\BaseAuthenticate->_findUser('nroman', 'nroman')
+#15 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php(789): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 /home/nikonegima/Escritorio/DBDz/src/Controller/UsersController.php(21): Cake\Controller\Component\AuthComponent->identify()
+#17 [internal function]: App\Controller\UsersController->login()
+#18 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Controller/Controller.php(435): call_user_func_array(Array, Array)
+#19 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(122): Cake\Controller\Controller->invokeAction()
+#20 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(96): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#21 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#25 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#26 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#27 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#28 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#29 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#30 /home/nikonegima/Escritorio/DBDz/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#31 /home/nikonegima/Escritorio/DBDz/webroot/index.php(37): Cake\Http\Server->run()
+#32 {main}
+
+
+2016-12-01 20:11:56 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:11:56 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:12:06 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:12:08 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:13:20 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:13:29 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:13:29 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-01 20:13:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
