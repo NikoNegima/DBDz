@@ -143,4 +143,29 @@ class VolunteersTable extends Table
 
         return $rules;
     }
+
+    public function saveNewVolunteer(array $volunteerData, int $user_id) {
+        $volunteer = $this->newEntity();
+        
+        $volunteer->rut_volunteer = $volunteerData['rut'];
+        $volunteer->user_id = $user_id;
+        $volunteer->task_id = null;
+        $volunteer->name = $volunteerData['name'];
+        $volunteer->last_name_first = $volunteerData['last_name_first'];
+        $volunteer->last_name_second = $volunteerData['last_name_second'];
+        $volunteer->age = $volunteerData['age'];
+        $volunteer->residency = $volunteerData['residency'];
+        $volunteer->mail = $volunteerData['mail'];
+        $volunteer->disponibility = true;
+        $volunteer->performance_area = $volunteerData['performance_area'];
+        $volunteer->actual_ubication = $volunteerData['actual_ubication'];
+        $volunteer->phone = $volunteerData['phone'];  
+
+        if($this->save($volunteer)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 }

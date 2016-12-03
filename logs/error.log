@@ -14478,3 +14478,42 @@ Stack Trace:
 2016-12-03 18:22:38 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2016-12-03 18:22:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2016-12-03 18:22:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:23:38 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:23:38 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:23:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:24:44 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:24:45 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:25:20 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:26:03 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:26:03 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:26:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:26:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:26:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:26:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Styles.css could not be found.
+Exception Attributes: array (
+  'class' => 'Styles.css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /styles.css
+Referer URL: http://localhost:8765/volunteers
+Stack Trace:
+#0 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(67): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(93): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /home/arturo/Documents/DBD/DBDz/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 /home/arturo/Documents/DBD/DBDz/webroot/index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2016-12-03 22:26:18 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-12-03 22:26:18 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.

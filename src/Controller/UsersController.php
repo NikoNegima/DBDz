@@ -54,6 +54,7 @@ class UsersController extends AppController
         if($this->request->is('post')) {
             if ($register->execute($this->request->data)) {
 
+                debug($this->request->data);
 
                 $user = $this->Users->newEntity();
                 $user->username = $this->request->data['username'];
@@ -62,39 +63,17 @@ class UsersController extends AppController
                 
                 if($this->Users->save($user)) {
                     $this->loadModel('Volunteers');
-                    $volunteer = $this->Volunteers->newEntity();
-                    $volunteer->rut_volunteer = $this->request->data['rut'];
-                    $volunteer->user_id = $user->id;
-                    $volunteer->task_id = null;
-                    $volunteer->name = $this->request->data['name'];
-                    $volunteer->last_name_first = $this->request->data['last_name_first'];
-                    $volunteer->last_name_second = $this->request->data['last_name_second'];
-                    $volunteer->age = $this->request->data['age'];
-                    $volunteer->residency = $this->request->data['residency'];
-                    $volunteer->mail = $this->request->data['mail'];
-                    $volunteer->disponibility = true;
-                    $volunteer->performance_area = $this->request->data['performance_area'];
-                    $volunteer->actual_ubication = $this->request->data['actual_ubication'];
-                    $volunteer->phone = $this->request->data['phone'];
 
-                    if($this->Volunteers->save($volunteer)) {
+                    if($this->Volunteers->saveNewVolunteer($this->request->data, $user->id)) {
                         $this->Flash->success('Registrado con exito');
                         return $this->redirect(['controller' => 'Users', 'action' => 'login']);
                     }
-
-                    
-
                 }
-
-
                 
             } else {
                 $this->Flash->error('No se pudo ingresar el formulario');
             }
         }
-
-        
-
     }
 
     public function logout()
