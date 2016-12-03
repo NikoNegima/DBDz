@@ -231,7 +231,7 @@ return [
             //'port' => 'non_standard_port_number',
             'username' => 'planta',
             'password' => 'carnivora',
-            'database' => 'DB_Emergencias_Alpha',
+            'database' => 'DBD_Emergencias',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],

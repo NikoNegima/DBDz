@@ -21,5 +21,16 @@ class ManagersController extends AppController
         
     }
 
+    //Para que solo aquellos que tengan la autorizacion requerida puedan acceder a este controlador, creo.
+    public function isAuthorized($user) {
+    	if ($user != null) {
+    		if(strpos($user['attributes'], 'M') !== false) {
+    			return true;
+    		} 
+    	}
+
+    	return false;
+    } 
+
     
 }

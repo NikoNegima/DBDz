@@ -27,7 +27,7 @@ class VolunteersController extends AppController
     //Para que solo aquellos que tengan la autorizacion requerida puedan acceder a este controlador, creo.
     public function isAuthorized($user) {
     	if ($user != null) {
-    		if(strpos($user['attribute'], 'V') !== false) {
+    		if(strpos($user['attributes'], 'V') !== false) {
     			return true;
     		} 
     	}
@@ -37,6 +37,7 @@ class VolunteersController extends AppController
 
     public function beforeFilter(Event $event)
     {
+
 
 
 
