@@ -33,3 +33,49 @@ button.adapt {
 	height: all;
 	width: 100%;
 }
+
+
+/*Elemento de Tabla */
+div.tabla {
+	display: table;
+	color: black;
+	width: 100%;
+	background: #eeeeee;
+	border: 2px solid black;
+}
+
+div.filaHeader {
+	display: table-row;
+	clear: both;
+	background-color: black;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	height: auto;
+}
+
+div.elementoHeader {
+	float: left;
+	display: table-column;
+	background: black;
+	color: white;
+	width: 14.28%;
+	outline: 2px solid black;
+	text-align: center;
+}
+
+div.fila {
+	display: table-row;
+	clear: both;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.elemento {
+	float: left;
+	display: table-column;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 14.28%;		/*Importante a la hora de definir cuantos elementos son en la tabla*/
+}
+

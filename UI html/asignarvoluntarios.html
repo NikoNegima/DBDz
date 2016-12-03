@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asignar Voluntarios a las Tareas</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+		*{border-style: dotted;border-width: 1px;}
+	</style>
+</head>
+<body>
+
+
+				<!--Idea principal: En la tabla se ven los voluntarios con la(s) habilidades pedidas ordenados por exp.
+				Ademas, los voluntarios mostrados en la tabla tiene que estar, minimo, en la misma region y/o area.
+				Podemos incluir que solo se vean los que tienen disponibilidad.
+
+				A la izquierda, estan en un combo box las tareas creadas en la vistas anterior. 
+				Todos los combos box, partira en un estado de SIN ASIGNAR. -->
+
+
+	<div class="container">
+
+		<div class="main-row">
+			<div class="col-md-12">
+				<h1 class="text-center">Asignar voluntarios a las tareas creadas.</h1>
+				<br><br>
+				<!--Inicia el div de tabla -->
+				<div class="tabla text-center">
+					<div class="filaHeader">
+						<div class="elementoHeader">Nombre</div>
+						<div class="elementoHeader">Apellido</div>
+						<div class="elementoHeader">Rut</div>
+						<div class="elementoHeader">Experiencia</div>
+						<div class="elementoHeader">Ubicacion Actual</div>
+						<div class="elementoHeader">Disppnibilidad</div>
+						<div class="elementoHeader">Tarea</div>
+					</div>
+					<div class="fila">
+						<!--Estos datos se recogen de la BD (GONZA SABE COMO) -->
+						<div class="elemento">1</div>
+						<div class="elemento">2</div>
+						<div class="elemento">3</div>
+						<div class="elemento">4</div>
+						<div class="elemento">5</div>
+						<div class="elemento">6</div>
+						<div class="elemento">
+							<!--Esta wea no se si puede hacer... guardar los elementos de la
+							vista anterior y meterlos en el combo box -->
+							<select name="tarea" id="">
+								<option value="N">NO ASIGNAR</option>
+								<option value="1">Task 1</option>
+								<option value="2">Task 2</option>
+								<option value="3">Task 3</option>
+							</select>
+						</div>
+					</div>
+				<!--Aqui termina la tabla  -->
+				</div>
+			<br>
+			<br>
+			<button class="btn btn-primary pull-right">Enviar</button>	
+			<!-- Aqui termina el col-md-12 -->
+			</div>
+		<!-- Aqui termina el main-row -->
+		</div>
+
+	<!--Fin Container -->
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
