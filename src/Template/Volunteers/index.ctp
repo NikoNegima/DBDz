@@ -1,7 +1,7 @@
 <!-- File: src/Template/Volunteers/index.ctp -->
 <?php $this->layout = 'voluntarios'; ?>
 
-<title>pene</title>
+<title>Home voluntario</title>
 
 <div class="container">
 		<div class="main-row">

@@ -59,8 +59,7 @@ class UsersController extends AppController
                 $user->username = $this->request->data['username'];
                 $user->password = $this->request->data['password'];
                 $user->attributes = 'V';
-                debug($this->request->data);
-
+                
                 if($this->Users->save($user)) {
                     $this->loadModel('Volunteers');
                     $volunteer = $this->Volunteers->newEntity();
@@ -100,7 +99,8 @@ class UsersController extends AppController
 
     public function logout()
     {
-        return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+        //return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+        return $this->redirect($this->Auth->logout());
     }
 
     public function beforeFilter(Event $event)

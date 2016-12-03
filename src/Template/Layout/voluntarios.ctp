@@ -29,7 +29,7 @@
 		<li><a class="" href="#">Link1</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text">Conectado Como: Voluntario</p></li>
+        <li><p class="navbar-text">Conectado como: <?= $fullname ?> </p></li> <!-- la variable $fullname tiene una string con el nombre del usuario -->
 		<li><a href="/Users/logout">Cerrar sesión</a></li>
           </ul>
         </li>

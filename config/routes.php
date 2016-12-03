@@ -51,6 +51,11 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/', ['controller' => 'Users', 'action' => 'login', 'home']);
 
+    $routes->redirect(
+        '/pages/*',
+        ['controller' => 'Users', 'action' => 'login']
+    );
+
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
