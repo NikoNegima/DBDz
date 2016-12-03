@@ -54,7 +54,6 @@ class UsersController extends AppController
         if($this->request->is('post')) {
             if ($register->execute($this->request->data)) {
 
-                debug($this->request->data);
 
                 $user = $this->Users->newEntity();
                 $user->username = $this->request->data['username'];
