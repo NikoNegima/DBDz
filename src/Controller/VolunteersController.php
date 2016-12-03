@@ -43,7 +43,8 @@ class VolunteersController extends AppController
     	//Todo este trozo de codigo funciona para pasar la variable $fullname al layout
     	//Usa esto para mostrar el nombre y apellido en la barra de arriba
     	if($this->Auth->user('id') != null) {
-    		$userInfo = $this->Volunteers->get($this->Auth->user('id'));
+            //Query para seleccionar voluntario por user_id
+    		$userInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
       		$fullname = $userInfo['name'] . " " . $userInfo['last_name_first'];
             $this->set('fullname', $fullname);
 
