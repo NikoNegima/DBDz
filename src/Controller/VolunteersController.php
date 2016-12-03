@@ -20,6 +20,7 @@ class VolunteersController extends AppController
     public function index()
     {
     	
+        
     }
 
     
@@ -36,6 +37,8 @@ class VolunteersController extends AppController
 
     public function beforeFilter(Event $event)
     {
+
+
 
     	//Todo este trozo de codigo funciona para pasar la variable $fullname al layout
     	//Usa esto para mostrar el nombre y apellido en la barra de arriba
