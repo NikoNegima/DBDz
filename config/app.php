@@ -229,9 +229,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'planta',
-            'password' => 'carnivora',
-            'database' => 'DBD_Emergencias',
+            'username' => 'root',
+            'password' => 'root',
+            'database' => 'DBDz',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],

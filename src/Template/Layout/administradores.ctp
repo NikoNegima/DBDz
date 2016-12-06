@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Voluntario</title>
+	<title>Administrador</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -24,9 +24,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class=""><a href="/Volunteers/">Home <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="/Admins/">Home <span class="sr-only">(current)</span></a></li>
         <li><a class="" href="#">Enviar Mensaje</a></li>
-		<li><a class="" href="#">Aceptar Tareas</a></li>
+		<li><a class="" href="/Admins/crearemergencia">Crear Emergencia</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><p class="navbar-text">Conectado como: <?= $fullname ?> </p></li> <!-- la variable $fullname tiene una string con el nombre del usuario -->
