@@ -55,6 +55,15 @@ class VolunteersController extends AppController
         
     }
 
+    public function enviarmensaje()
+    {
+         //Consultando por lo ejecutores posibles (deberian ser los de la misma mision encargado)
+         $this->loadModel('Managers');
+         $managers = $this->Managers->find('all');
+         $this->set(compact('managers'));   
+
+
+    }
 	
 
     
