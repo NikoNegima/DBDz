@@ -21,7 +21,7 @@ class AdminsController extends AppController
      */
     public function index()
     {
-       
+
     }
 
     //Para que solo aquellos que tengan la autorizacion requerida puedan acceder a este controlador, creo.
@@ -75,16 +75,63 @@ class AdminsController extends AppController
             $emergency->severity = $this->request->data['gravedad'];
             $emergency->description = $this->request->data['descemergencia'];
             $emergency->status = "En Progreso";
-                
+
             if($emergenciesTable->save($emergency))
             {
                 $this->Flash->success('Emergencia creada con exito');
-                return $this->redirect(['controller' => 'Admins', 'action' => 'index']);
+                $session = $this->request->session();
+                $session->write('eme_id', $emergency['id']);
+                return $this->redirect(['controller' => 'Admins', 'action' => 'addmision']);
             }
             else{
                 $this->Flash->error('No se pudo crear emergencia');
             }
 
         }       
-    }    
+    }
+
+    public function addmision(){
+        //Consulta a la bd de todas las misiones
+        $this->loadModel('Missions');
+        $missions = $this->Missions->find('all');
+        $this->set(compact('missions'));
+
+        //Consulta a la bd con todos los encargados
+        $this->loadModel('Managers');
+        $managers = $this->Managers->find('all');
+        $this->set(compact('managers'));        
+    }
+
+    public function defmision(){
+        //Consulta a la bd con todos los encargados
+        $this->loadModel('Managers');
+        $managers = $this->Managers->find('all');
+        $this->set(compact('managers'));
+
+        if($this->request->is('post')){
+            $userInfo = $this->Admins->findByUserId($this->Auth->user('id'))->first();
+
+            $missionsTable    = TableRegistry::get('Missions');
+            $mission = $missionsTable->newEntity();
+
+            $session = $this->request->session();
+            $eme_id = $session->read('eme_id');
+
+            $mission->manager_id = $this->request->data['encargado'];
+            $mission->emergency_id = $eme_id;
+            $mission->admin_id = $userInfo['id'];
+            $mission->mission_name = $this->request->data['nombremision'];
+            $mission->volunteer_amount = ($this->request->data['cantvoluntarios']) + 0;
+            $mission->status = "En Progreso";
+
+            if($missionsTable->save($mission)){
+                $this->Flash->success('Misión creada con exito');
+                return $this->redirect(['controller' => 'Admins', 'action' => 'addmision']);
+            }
+            else{
+                $this->Flash->error('No se pudo crear misión');
+            }
+        }
+    }
+
 }      

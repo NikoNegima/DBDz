@@ -63,6 +63,9 @@ class RegisterForm extends Form {
             ])->add('actual_ubication', 'format', [
                 'rule' => 'notBlank',
                 'message' => 'Ingrese la ubicación actual donde se encuentra',
+            ])->add('date', 'format', [
+                'rule' => ['custom', '/^[0-9+]+$/'],
+                'message' => 'Fecha invalido (Ej: 2014/12/12)',
             ]);
 
             
