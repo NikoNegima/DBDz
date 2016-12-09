@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Enviar Mensaje</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
+<!-- File: src/Template/Volunteers/enviarMensaje.ctp -->
+<?php $this->layout = 'voluntarios'; ?>
 
 
 
 	<div class="container">
 		<form action="" class="form-horizontal">
 			<div class="form-group">
-					<!-- Combobox: Region y Comuna y Direccion-->
+					<!-- Combobox: Encargados-->
 					<label for="encarg" class="control-label col-md-4">Seleccione el encargado a enviar el mensaje:</label>
 					<div class="col-md-4">
-						<select name="" class="form-control" id="region">
-							<option value="1">Encargado 1</option>
+						<select name="encargado" class="form-control" id="region">
+							<?php foreach ($managers as $manager): ?> 
+								<option value=<?php echo $manager->id;?>><?php echo $manager->name;?></option>
+							<?php endforeach; ?>
 						</select>
 					</div>
 			</div>
@@ -26,7 +21,7 @@
 					<label for="" class="control-label">Ingrese su mensaje:</label>
 
 					<div class="container " >
-						<textarea class="form-control" style="resize:none;width:90%;margin-left:50px;" rows="10" id="comment" placeholder="Que Sucede? "></textarea>
+						<textarea name="msj" class="form-control" style="resize:none;width:90%;margin-left:50px;" rows="10" id="comment" placeholder="Que Sucede? "></textarea>
 					</div>
 
 				</div>
