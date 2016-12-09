@@ -62,6 +62,26 @@ div.elementoHeader {
 	outline: 2px solid black;
 	text-align: center;
 }
+div.elementoHeader5 {
+	float: left;
+	display: table-column;
+	background: black;
+	color: white;
+	width: 20%;
+	outline: 2px solid black;
+	text-align: center;
+}
+
+div.elementoHeader3 {
+	float: left;
+	display: table-column;
+	background: black;
+	color: white;
+	width: 33.3%;
+	outline: 2px solid black;
+	text-align: center;
+}
+
 
 div.fila {
 	display: table-row;
@@ -79,3 +99,20 @@ div.elemento {
 	width: 14.28%;		/*Importante a la hora de definir cuantos elementos son en la tabla*/
 }
 
+div.elemento5 {
+	float: left;
+	display: table-column;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 20%;		/*Importante a la hora de definir cuantos elementos son en la tabla*/
+}
+
+div.elemento3 {
+	float: left;
+	display: table-column;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 33.3%;		/*Importante a la hora de definir cuantos elementos son en la tabla*/
+}
