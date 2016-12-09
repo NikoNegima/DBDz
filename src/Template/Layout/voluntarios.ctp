@@ -26,7 +26,7 @@
       <ul class="nav navbar-nav">
         <li class=""><a href="/Volunteers/">Home <span class="sr-only">(current)</span></a></li>
         <li><a class="" href="/Volunteers/enviarMensaje">Enviar Mensaje</a></li>
-		    <li><a class="" href="#">Aceptar Tareas</a></li>
+		    <li><a class="" href="/Volunteers/aceptartareas">Aceptar Tareas</a></li>
         <li><a class="" href="/Volunteers/asignarhabilidades">Asignar Habilidades</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

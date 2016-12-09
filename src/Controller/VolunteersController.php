@@ -82,12 +82,18 @@ class VolunteersController extends AppController
 
     public function asignarhabilidades()
     {
-         //Consultando por las skills!
+         //Consultando por todas las skills del usuarios!
          $this->loadModel('Skills');
          $skills = $this->Skills->find('all');
          $this->set(compact('skills')); 
     }
+
+    public function aceptartareas()
+    {
+
+    }
 	
+
 
     
 }
