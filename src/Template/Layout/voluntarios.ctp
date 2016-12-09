@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/Volunteers/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a class="" href="#">Enviar Mensaje</a></li>
+        <li><a class="" href="/Volunteers/enviarMensaje">Enviar Mensaje</a></li>
 		<li><a class="" href="#">Aceptar Tareas</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
