@@ -3,6 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use App\Form\RegisterForm;
+use Cake\ORM\TableRegistry;
 
 /**
  * Admins Controller
@@ -42,6 +44,7 @@ class AdminsController extends AppController
             //Query para seleccionar voluntario por user_id
             $userInfo = $this->Admins->findByUserId($this->Auth->user('id'))->first();
             $fullname = $userInfo['name'] . " " . $userInfo['last_name_first'];
+            $adminid = $userInfo['id'];
             $this->set('fullname', $fullname);
 
         } else {
@@ -50,10 +53,38 @@ class AdminsController extends AppController
         
     }
 
+    //Funcion de la vista para crear emergencias
     public function crearemergencia()
-    {
-       
-    }
+    {  
+        //Consulta a la bd de todas las comunas
+        $this->loadModel('Communes');
+        $communes = $this->Communes->find('all');
+        $this->set(compact('communes'));
 
-    
-}
+        if($this->request->is('post')) {
+
+            $userInfo = $this->Admins->findByUserId($this->Auth->user('id'))->first();
+
+            $emergenciesTable    = TableRegistry::get('Emergencies');
+
+            $emergency = $emergenciesTable->newEntity();
+            $emergency->admin_id = $userInfo['id'];
+            $emergency->commune_id = $this->request->data['comuna'];
+            $emergency->date = $this->request->data['fechaemergencia'];
+            $emergency->place = $this->request->data['lugaremergencia'];
+            $emergency->severity = $this->request->data['gravedad'];
+            $emergency->description = $this->request->data['descemergencia'];
+            $emergency->status = "En Progreso";
+                
+            if($emergenciesTable->save($emergency))
+            {
+                $this->Flash->success('Emergencia creada con exito');
+                return $this->redirect(['controller' => 'Admins', 'action' => 'index']);
+            }
+            else{
+                $this->Flash->error('No se pudo crear emergencia');
+            }
+
+        }       
+    }    
+}      
