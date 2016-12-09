@@ -50,6 +50,20 @@ class ManagersController extends AppController
         
     }
 
+    public function gestionarestados()
+    {
 
+    }
+
+
+   public function gestionarsolicitudes()
+    {
+
+    }
+
+    public function definirvoluntario()
+    {
+
+    }
 
 }

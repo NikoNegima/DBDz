@@ -4,7 +4,7 @@
 	<title>Encargado</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 	
@@ -25,9 +25,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/Managers/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a class="" href="#">Designar Voluntarios a Tareas</a></li>
-		    <li><a class="" href="#">Gestionar Estados</a></li>
-        <li><a class="" href="#">Gestionar Solicitudes</a></li>
+        <li><a class="" href="/Managers/definirvoluntario">Designar Voluntarios a Tareas</a></li>
+		    <li><a class="" href="/Managers/gestionarestados">Gestionar Estados</a></li>
+        <li><a class="" href="/Managers/gestionarsolicitudes">Gestionar Solicitudes</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><p class="navbar-text">Conectado como: <?= $fullname ?> </p></li> <!-- la variable $fullname tiene una string con el nombre del usuario -->
