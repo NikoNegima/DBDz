@@ -66,4 +66,29 @@ class ManagersController extends AppController
 
     }
 
+    //Método que envia un mensaje desde el encargado a un voluntario
+    public function enviarmensaje()
+    {
+         //Consultando por lo ejecutores posibles (deberian ser los de la misma mision encargado)
+         $this->loadModel('Volunteers');
+         $volunteers = $this->Volunteers->find('all');
+         $this->set(compact('volunteers'));   
+         
+         if($this->request->is('post')){
+
+            $managerInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+            $this->loadModel('Notifications');
+            if($this->Notifications->saveMessage($this->request->data, $managerInfo->id)){
+                $this->Flash->success('Mensaje enviado correctamente.');
+                return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
+            }
+            else{
+                
+                $this->Flash->error('No se pudo enviar el mensaje.');
+            }
+
+         }
+
+    }
+
 }

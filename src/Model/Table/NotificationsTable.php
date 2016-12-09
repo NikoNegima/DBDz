@@ -86,10 +86,10 @@ class NotificationsTable extends Table
     }
 
     //Método que guarda un mensaje creado por un encargado en la Base de datos
-    public function saveMessage(array $messageData, $volunteer_id){
+    public function saveMessage(array $messageData, $actual_id){
         $notification = $this->newEntity();
         $notification->manager_id = $messageData['encargado'];
-        $notification->volunteer_id = $volunteer_id;
+        $notification->volunteer_id = $actual_id;
         $notification->detail = $messageData['msj'];
         $notification->urgency_level = $messageData['gravedad'];
 
