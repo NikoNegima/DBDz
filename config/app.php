@@ -230,10 +230,8 @@ return [
              */
             //'port' => 'non_standard_port_number',
             'username' => 'root',
-            'password' => '',
-            'database' => 'DBD_Emergency',
-            'password' => '',
-            'database' => 'DBDz',
+            'password' => 'x',
+            'database' => 'DBD_Emergencias',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
