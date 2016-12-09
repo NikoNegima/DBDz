@@ -12,8 +12,8 @@
 					<label for="encarg" class="control-label col-md-4">Seleccione el encargado a enviar el mensaje:</label>
 					<div class="col-md-4">
 						<select name="encargado" class="form-control" id="region">
-							<?php foreach ($managers as $manager): ?> 
-								<option value=<?php echo $manager->id;?>><?php echo $manager->name;?></option>
+							<?php foreach ($volunteers as $volunteer): ?> 
+								<option value=<?php echo $volunteer->id;?>><?php echo $volunteer->name;?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
