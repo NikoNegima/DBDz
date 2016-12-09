@@ -4,7 +4,9 @@
 
 
 	<div class="container">
-		<form action="" class="form-horizontal">
+			<?php 
+                echo $this->Form->create(NULL, ['class' => 'form-horizontal']); 
+            ?>
 			<div class="form-group">
 					<!-- Combobox: Encargados-->
 					<label for="encarg" class="control-label col-md-4">Seleccione el encargado a enviar el mensaje:</label>
@@ -15,6 +17,17 @@
 							<?php endforeach; ?>
 						</select>
 					</div>
+			</div>
+			<div class="form-group">
+					<label for="encarg" class="control-label col-md-4">Seleccione la gravedad de la emergencia:</label>
+					<div class="col-md-4">
+						<select name="gravedad" class="form-control">
+							<option value="1">Baja</option>
+							<option value="2">Media</option>
+							<option value="3">Urgente</option>
+						</select>
+					</div>
+				
 			</div>
 			<div class="form-group">
 				<div class="container text-center">
@@ -28,9 +41,12 @@
 			</div>	
 			<div class="form-group">
 				<button class="btn btn-primary pull-left">Atras</button>
-				<button class="btn btn-primary pull-right">Enviar</button>
+				<!--<button class="btn btn-primary pull-right">Enviar</button>-->
+				<?php
+					echo $this->Form->button('Enviar', ['type' => 'submit', 'class' => 'btn btn-primary pull-right']);
+					echo $this->Form->end();
+				?>
 			</div>
-		</form>
 	</div>
 	
 	<script src="js/jquery.js"></script>

@@ -61,7 +61,21 @@ class VolunteersController extends AppController
          $this->loadModel('Managers');
          $managers = $this->Managers->find('all');
          $this->set(compact('managers'));   
+         
+         if($this->request->is('post')){
 
+            $volunteerInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
+            $this->loadModel('Notifications');
+            if($this->Notifications->saveMessage($this->request->data, $volunteerInfo->id)){
+                $this->Flash->success('Mensaje enviado correctamente.');
+                return $this->redirect(['controller' => 'Volunteers', 'action' => 'index']);
+            }
+            else{
+                
+                $this->Flash->error('No se pudo enviar el mensaje.');
+            }
+
+         }
 
     }
 	
