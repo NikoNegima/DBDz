@@ -7,7 +7,7 @@ use Cake\ORM\TableRegistry;?>
 <div class="container">
 
 	<!-- Cabecera -->
-	<div class="section"><div class="container"><div class="row"><div class="col-md-12"><h3>Misiones definidas</h3></div></div></div></div><div class="row">
+	<div class="section"><div class="container"><div class="row"><div class="col-md-12"><h3>Misiones Definidas</h3></div></div></div></div><div class="row">
 
 		<div class="row">
 			<div class="text-center" >
@@ -65,7 +65,7 @@ use Cake\ORM\TableRegistry;?>
 
 	    <div class="row">
 			<div class="text-center">
-		        		<button type="button" class="btn btn-primary"">Terminar</button>
+		        		<button onclick="location.href='/Admins/'" type="button" class="btn btn-primary"">Terminar</button>
 		    </div>
 		</div>
 

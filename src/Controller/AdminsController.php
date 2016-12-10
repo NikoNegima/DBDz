@@ -81,7 +81,7 @@ class AdminsController extends AppController
                 $this->Flash->success('Emergencia creada con exito');
                 $session = $this->request->session();
                 $session->write('eme_id', $emergency['id']);
-                return $this->redirect(['controller' => 'Admins', 'action' => 'addmision']);
+                return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
             }
             else{
                 $this->Flash->error('No se pudo crear emergencia');
@@ -131,6 +131,54 @@ class AdminsController extends AppController
             else{
                 $this->Flash->error('No se pudo crear misión');
             }
+        }
+    }
+
+    public function addhab(){
+
+        //Consulta a la bd de todas las habilidades
+        $this->loadModel('Skills');
+        $skills = $this->Skills->find('all');
+        $this->set(compact('skills'));
+
+        //Consulta a la bd de todas las misiones
+        $this->loadModel('Emergencies');
+        $emergencies = $this->Emergencies->find('all');
+        $this->set(compact('emergencies'));
+
+        if($this->request->is('post')){
+
+            $emergencies_skillsTable = TableRegistry::get('EmergenciesneedSkills');
+            $emergency_skill = $emergencies_skillsTable->newEntity();
+
+            $session = $this->request->session();
+            $eme_id = $session->read('eme_id');
+
+            $emergency_skill->emergency_id = $eme_id;
+            $emergency_skill->skill_id = $this->request->data['habilidad'];
+
+            if($emergencies_skillsTable->save($emergency_skill)){
+                $this->Flash->success('Habilidad agregada con exito');
+                return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
+            }
+            else{
+                $this->Flash->error('No se agregar habilidad');
+            }
+            
+
+            /*$testTable = TableRegistry::get('Tests');
+            $test = $testTable->newEntity();
+
+            $test->nombre = "nombretesteo";
+
+            if($testTable->save($test)){
+                $this->Flash->success('Habilidad agregada con exito');
+                return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
+            }
+            else{
+                $this->Flash->error('No se agregar habilidad');
+            }*/
+
         }
     }
 
