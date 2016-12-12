@@ -1,4 +1,4 @@
-<!-- File: src/Template/Admins/crearemergencia	.ctp -->
+<!-- File: src/Template/Admins/addmision.ctp -->
 <?php $this->layout = 'administradores'; 
 use Cake\ORM\TableRegistry;?>
 

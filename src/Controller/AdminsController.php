@@ -47,6 +47,9 @@ class AdminsController extends AppController
             $adminid = $userInfo['id'];
             $this->set('fullname', $fullname);
 
+            $session = $this->request->session();
+            $session->write('id', $adminid);
+
         } else {
             $this->set('fullname', '');
         } 
@@ -141,7 +144,7 @@ class AdminsController extends AppController
         $skills = $this->Skills->find('all');
         $this->set(compact('skills'));
 
-        //Consulta a la bd de todas las misiones
+        //Consulta a la bd de todas las emergencias
         $this->loadModel('Emergencies');
         $emergencies = $this->Emergencies->find('all');
         $this->set(compact('emergencies'));
@@ -174,10 +177,55 @@ class AdminsController extends AppController
             if($testTable->save($test)){
                 $this->Flash->success('Habilidad agregada con exito');
                 return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
-            }
+               }
             else{
                 $this->Flash->error('No se agregar habilidad');
             }*/
+
+        }
+    }
+
+    public function indexemer(){
+
+        //Consulta a la bd de todas las emergencias
+        $this->loadModel('Emergencies');
+        $emergencies = $this->Emergencies->find('all');
+        $this->set(compact('emergencies'));
+
+        $userInfo = $this->Admins->findByUserId($this->Auth->user('id'))->first();
+        $admin_id_actual = $userInfo['id'];
+
+        if($this->request->is('post')){
+
+            /*
+            $emergenciesTable    = TableRegistry::get('Emergencies');
+            $query = $emergenciesTable->query();
+            $query->update()
+                ->set(['status' => ""])
+                ->where(['id' => 1])
+                ->execute();
+            */
+
+            $emergenciesTable = TableRegistry::get('Emergencies');
+            foreach($emergencies as $emergency){
+                $id_emergencia = $emergency['id'];
+
+                $id_admin_emergencia = $emergency['admin_id'];
+                if($id_admin_emergencia == $admin_id_actual){
+
+                    $status = $this->request->data['combobox' . $id_emergencia];
+                    
+                    $query = $emergenciesTable->query();
+                    $query->update()
+                        ->set(['status' => $status])
+                        ->where(['id' => $id_emergencia])
+                        ->execute();
+
+
+                }
+            }
+
+            return $this->redirect(['controller' => 'Admins', 'action' => 'indexemer']);
 
         }
     }

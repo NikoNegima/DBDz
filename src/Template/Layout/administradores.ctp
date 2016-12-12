@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/Admins/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a class="" href="#">Enviar Mensaje</a></li>
+        <li><a class="" href="/Admins/indexemer">Cambiar Estado Emergencia</a></li>
         
 		<li><a class="" href="/Admins/crearemergencia">Crear Emergencia</a></li>
       </ul>
