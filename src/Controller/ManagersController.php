@@ -64,17 +64,36 @@ class ManagersController extends AppController
 
     public function definirvoluntario()
     {
+        //Consulta a la bd de todos los voluntarios
+        $this->loadModel('Volunteers');
+        $vol = $this->Volunteers->find('all');
+        
+
+        //Se obtiene el ID del usuario actual
+        $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+
+        //Consulta a la bd con todas las tareas 
+        $query2 = TableRegistry::get('Missions')->find();
+
+        //Consulta a la bd con todas las tareas 
+        $query = TableRegistry::get('Tasks')->find();
+
+        //Se busca la id de la mision
+        $id_mission = $query2->where(['manager_id' => $userInfo['id']])->first();
+
+        //Ahora buscamos las tareas que sean de la mision actual
+        $mission_tasks = $query->where(['mission_id' => $id_mission['id']]);
+
+        //Ahora le pasamos a las vistas las variables necesarias
+        $this->set(compact('vol'));
+        $this->set(compact('mission_tasks'));
+
 
     }
 
     //Funcion encargada de obtener datos y pasarlos a la BD
     public function defTask()
     {
-        //Consulta a la bd de todas las comunas
-        $this->loadModel('Managers');
-        $communes = $this->Managers->find('all');
-        $this->set(compact('managers'));
-
 
         $session = $this->request->session();
         
