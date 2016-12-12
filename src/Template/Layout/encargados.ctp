@@ -26,6 +26,7 @@
       <ul class="nav navbar-nav">
         <li class=""><a href="/Managers/">Home <span class="sr-only">(current)</span></a></li>
         <li><a class="" href="/Managers/definirvoluntario">Designar Voluntarios a Tareas</a></li>
+         <li><a class="" href="/Managers/def_task">Crear Tareas</a></li>
 		    <li><a class="" href="/Managers/gestionarestados">Gestionar Estados</a></li>
         <li><a class="" href="/Managers/gestionarsolicitudes">Gestionar Solicitudes</a></li>
       </ul>

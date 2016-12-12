@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Managers Controller
@@ -64,6 +65,60 @@ class ManagersController extends AppController
     public function definirvoluntario()
     {
 
+    }
+
+    //Funcion encargada de obtener datos y pasarlos a la BD
+    public function defTask()
+    {
+        //Consulta a la bd de todas las comunas
+        $this->loadModel('Managers');
+        $communes = $this->Managers->find('all');
+        $this->set(compact('managers'));
+
+
+        $session = $this->request->session();
+        
+
+
+        if($this->request->is('post'))
+        {
+            //Se obtiene el ID del usuario actual
+            $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+
+            //Se carga la tabla de tareas desde la BD y se instancia
+            $taskTable    = TableRegistry::get('Tasks');
+            $task = $taskTable->newEntity();
+
+            //Se procede a almacenar la informacion obtenida en las tuplas de la BD
+            $task->manager_id = $userInfo['id'];
+
+            $query = TableRegistry::get('Missions')->find();
+            $id_mission = $query->where(['manager_id' => $userInfo['id']])->first();
+
+            
+            $task->mission_id = $id_mission['id'];
+
+            $task->task_name = $this->request->data['nombretarea'];
+            $cant = intval($this->request->data['cantarea']);
+            
+            $task->volunteer_amount = $cant;
+            $task->task_status = "Progreso";
+            $task->guide_doc = $this->request->data['desctarea'];
+            debug($task);
+            
+            //Finalmente, se traspasan estos datos a la base de datos
+            if($taskTable->save($task))
+            {
+                $this->Flash->success('Tarea creada con exito');
+                $session = $this->request->session();
+                $session->write('task_id', $task['id']);
+                return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
+            }
+            else{
+                $this->Flash->error('No se pudo crear emergencia');
+            }
+            
+        }
     }
 
     //Método que envia un mensaje desde el encargado a un voluntario
