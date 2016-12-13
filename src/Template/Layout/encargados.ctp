@@ -24,15 +24,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class=""><a href="/Managers/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a class="" href="/Managers/definirvoluntario">Designar Voluntarios a Tareas</a></li>
-         <li><a class="" href="/Managers/def_task">Crear Tareas</a></li>
-		    <li><a class="" href="/Managers/gestionarestados">Gestionar Estados</a></li>
-        <li><a class="" href="/Managers/gestionarsolicitudes">Gestionar Solicitudes</a></li>
+        <li class=""><a href="/Managers/"><font size="2">Home </font><span class="sr-only">(current)</span></a></li>
+        <li><a class="" href="/Managers/definirvoluntario"><font size="1">Designar Voluntarios a Tareas</font></a></li>
+         <li><a class="" href="/Managers/def_task"><font size="1">Crear Tareas</a></font></li>
+		    <li><a class="" href="/Managers/gestionarestados"><font size="1">Gestionar Estados</font></a></li>
+        <li><a class="" href="/Managers/gestionarsolicitudes"><font size="1">Gestionar Solicitudes</font></a></li>
+        <li><a class="" href="/Managers/enviarmensaje"><font size="1">Enviar Mensaje</font></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text">Conectado como: <?= $fullname ?> </p></li> <!-- la variable $fullname tiene una string con el nombre del usuario -->
-		<li><a href="/Users/logout">Cerrar sesión</a></li>
+        <li><p class="navbar-text"><font size="2">Conectado como: <?= $fullname ?> </font></p></li> <!-- la variable $fullname tiene una string con el nombre del usuario -->
+		<li><a href="/Users/logout"><font size="2">Cerrar sesión</font></a></li>
           </ul>
         </li>
       </ul>

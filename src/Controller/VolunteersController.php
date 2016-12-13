@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Volunteers Controller
@@ -66,8 +67,17 @@ class VolunteersController extends AppController
          if($this->request->is('post')){
 
             $volunteerInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
-            $this->loadModel('Notifications');
-            if($this->Notifications->saveMessage($this->request->data, $volunteerInfo->id)){
+
+            $notificationsTable = TableRegistry::get('Notifications');
+            $notification = $notificationsTable->newEntity();
+
+            $notification->manager_id = $this->request->data['encargado'];
+            $notification->volunteer_id = $volunteerInfo['id'];
+            $notification->detail = $this->request->data['msj'];
+            $notification->urgency_level = $this->request->data['gravedad'];
+            $notification->subject = "Mensaje";
+
+            if($notificationsTable->save($notification)){
                 $this->Flash->success('Mensaje enviado correctamente.');
                 return $this->redirect(['controller' => 'Volunteers', 'action' => 'index']);
             }

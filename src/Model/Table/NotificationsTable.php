@@ -67,6 +67,14 @@ class NotificationsTable extends Table
             ->requirePresence('urgency_level', 'create')
             ->notEmpty('urgency_level');
 
+        $validator
+            ->requirePresence('subject', 'create')
+            ->notEmpty('subject');
+
+        $validator
+            ->integer('task_related')
+            ->allowEmpty('task_related');
+
         return $validator;
     }
 
@@ -83,21 +91,5 @@ class NotificationsTable extends Table
         $rules->add($rules->existsIn(['volunteer_id'], 'Volunteers'));
 
         return $rules;
-    }
-
-    //Método que guarda un mensaje creado por un encargado en la Base de datos
-    public function saveMessage(array $messageData, $actual_id){
-        $notification = $this->newEntity();
-        $notification->manager_id = $messageData['encargado'];
-        $notification->volunteer_id = $actual_id;
-        $notification->detail = $messageData['msj'];
-        $notification->urgency_level = $messageData['gravedad'];
-
-        if($this->save($notification)){
-            return true;
-        }
-        else{
-            return false;
-        }
     }
 }

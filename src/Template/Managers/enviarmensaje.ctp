@@ -1,5 +1,7 @@
-<!-- File: src/Template/Volunteers/enviarMensaje.ctp -->
-<?php $this->layout = 'voluntarios'; ?>
+<!-- File: src/Template/Managers/enviarMensaje.ctp -->
+<?php $this->layout = 'encargados'; ?>
+
+
 
 	<div class="container">
 			<?php 
@@ -7,17 +9,16 @@
             ?>
 			<div class="form-group">
 					<!-- Combobox: Encargados-->
-					<label for="encarg" class="control-label col-md-4">Seleccione el encargado a enviar el mensaje:</label>
+					<label for="encarg" class="control-label col-md-4">Seleccione el voluntario a enviar el mensaje:</label>
 					<div class="col-md-4">
-						<select name="encargado" class="form-control" id="region">
-							<?php foreach ($managers as $manager): ?> 
-								<?php $fullname = $manager->name . " " .  $manager->last_name_first;?>
-								<option value=<?php echo $manager->id;?>><?php echo $fullname;?></option>
+						<select name="voluntario" class="form-control" id="region">
+							<?php foreach ($volunteers as $volunteer): ?>
+								<?php $fullname = $volunteer->name . " " . $volunteer->last_name_first;;?>
+								<option value=<?php echo $volunteer->id;?>><?php echo $fullname;?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
 			</div>
-
 			<div class="form-group">
 					<label for="encarg" class="control-label col-md-4">Seleccione la urgencia del mensaje:</label>
 					<div class="col-md-4">
@@ -27,8 +28,8 @@
 							<option value="3">Urgente</option>
 						</select>
 					</div>
+				
 			</div>
-
 			<div class="form-group">
 				<div class="container text-center">
 					<label for="" class="control-label">Ingrese su mensaje:</label>

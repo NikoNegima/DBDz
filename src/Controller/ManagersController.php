@@ -170,8 +170,17 @@ class ManagersController extends AppController
          if($this->request->is('post')){
 
             $managerInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
-            $this->loadModel('Notifications');
-            if($this->Notifications->saveMessage($this->request->data, $managerInfo->id)){
+
+            $notificationsTable = TableRegistry::get('Notifications');
+            $notification = $notificationsTable->newEntity();
+
+            $notification->manager_id = $managerInfo['id'];
+            $notification->volunteer_id = $this->request->data['voluntario'];
+            $notification->detail = $this->request->data['msj'];
+            $notification->urgency_level = $this->request->data['gravedad'];
+            $notification->subject = "Mensaje";
+            
+            if($notificationsTable->save($notification)){
                 $this->Flash->success('Mensaje enviado correctamente.');
                 return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
             }

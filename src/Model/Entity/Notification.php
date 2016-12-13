@@ -11,6 +11,8 @@ use Cake\ORM\Entity;
  * @property int $volunteer_id
  * @property string $detail
  * @property int $urgency_level
+ * @property string $subject
+ * @property int $task_related
  *
  * @property \App\Model\Entity\Manager $manager
  * @property \App\Model\Entity\Volunteer $volunteer

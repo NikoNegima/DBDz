@@ -36,7 +36,9 @@ class NotificationsTableTest extends TestCase
         'app.volunteers',
         'app.communes_volunteers',
         'app.skills',
-        'app.skills_volunteers'
+        'app.skills_volunteers',
+        'app.tools',
+        'app.tasks_tools'
     ];
 
     /**
@@ -89,6 +91,16 @@ class NotificationsTableTest extends TestCase
      * @return void
      */
     public function testBuildRules()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test saveMessage method
+     *
+     * @return void
+     */
+    public function testSaveMessage()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
