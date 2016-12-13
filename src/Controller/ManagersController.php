@@ -55,6 +55,7 @@ class ManagersController extends AppController
     {
         //Se obtiene el ID del usuario actual
         $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+        $id_manager = $userInfo['id'];
 
         //Consulta a la bd con todas las misiones 
         $query2 = TableRegistry::get('Missions')->find();
@@ -70,6 +71,34 @@ class ManagersController extends AppController
 
         //Le pasamos los elementos rescatados a la vista
         $this->set(compact('tasks'));
+
+        //Consulta a la bd de todas las tareas
+        $this->loadModel('Tasks');
+        $tsks = $this->Tasks->find('all');
+        $this->set(compact('tsks'));
+
+        $tasksTable = TableRegistry::get('Tasks');
+        if($this->request->is('post')){
+            foreach($tsks as $tareas){
+                $id_tarea = $tareas['id'];
+                $manager_id_tarea = $tareas['manager_id'];
+
+                if($id_manager == $manager_id_tarea){
+
+                    $status = $this->request->data['tarea' . $id_tarea];
+                    
+                    $query = $tasksTable->query();
+                    $query->update()
+                        ->set(['task_status' => $status])
+                        ->where(['id' => $id_tarea])
+                        ->execute();
+
+                }
+
+            }
+
+             return $this->redirect(['controller' => 'Managers', 'action' => 'gestionarestados']);
+        }
 
     }
 

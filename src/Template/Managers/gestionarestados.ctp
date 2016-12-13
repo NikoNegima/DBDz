@@ -10,6 +10,10 @@
 
 	<div class="container">
 
+      	<?php 
+    	    echo $this->Form->create(NULL, ['class' => 'form-horizontal']); 
+        ?>
+
 		<div class="main-row">	
 			<div class="col-md-12">
 				<h1 class="text-center">Modificar estados de tareas actuales.</h1>
@@ -31,10 +35,10 @@
 							<div class="elemento" style="width:33%"> <?php echo $tarea->task_name; ?> </div>
 							<div class="elemento" style="width:33%"> <?php echo $tarea->task_status; ?> </div>
 							<div class="elemento" style="width:33%">
-								<select name="tarea" id="">
-									<option value="Proceso">En Proceso</option>
+								<?php echo '<select name="tarea' . $tarea->id .  '" id="">'; ?>
+									<option value="En Proceso">En Proceso</option>
 									<option value="Cancelada">Cancelada</option>
-									<option value="Terminada">Finalizada</option>
+									<option value="Finalizada">Finalizada</option>
 								</select>
 							</div>
 
@@ -47,7 +51,9 @@
 			<div class="row  text-center">
 				<br>
 				<br>
-				<button class="btn btn-primary">Guardar Cambios</button>
+	        <?php
+        		echo $this->Form->button('Guardar Cambios', ['type' => 'submit', 'class' => 'btn btn-primary']);
+        	?>
 			</div>
 				
 			<!-- Aqui termina el col-md-12 -->
@@ -56,6 +62,10 @@
 		</div>
 
 	<!--Fin Container -->
+
+    <?php
+    	echo $this->Form->end();
+    ?>
 	</div>
 
 	<script src="js/jquery.js"></script>
