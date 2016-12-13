@@ -10,45 +10,46 @@
 
 	<div class="container">
 
-		<div class="main-row">
+		<div class="main-row">	
 			<div class="col-md-12">
-				<h1 class="text-center">Asignar voluntarios a las tareas creadas.</h1>
+				<h1 class="text-center">Modificar estados de tareas actuales.</h1>
 				<br><br>
 				<!--Inicia el div de tabla -->
 				<div class="tabla text-center">
 					<div class="filaHeader">
-						<div class="elementoHeader">Nombre</div>
-						<div class="elementoHeader">Apellido</div>
-						<div class="elementoHeader">Rut</div>
-						<div class="elementoHeader">Experiencia</div>
-						<div class="elementoHeader">Nombre Tarea</div>
-						<div class="elementoHeader">Estado Actual</div>
-						<div class="elementoHeader">Nuevo Estado</div>
+						<div class="elementoHeader" style="width:33%">Nombre Tarea</div>
+						<div class="elementoHeader" style="width:33%">Estado actual</div>
+						<div class="elementoHeader" style="width:34%">¿Cambiar?</div>
 					</div>
-					<div class="fila">
-						<!--Estos datos se recogen de la BD-->
-						<div class="elemento">1</div>
-						<div class="elemento">2</div>
-						<div class="elemento">3</div>
-						<div class="elemento">4</div>
-						<div class="elemento">5</div>
-						<div class="elemento">6</div>
-						<div class="elemento">
-							<!--Esta wea no se si puede hacer... guardar los elementos de la
-							vista anterior y meterlos en el combo box -->
-							<select name="tarea" id="">
-								<option value="N">Creada</option>
-								<option value="1">En Proceso</option>
-								<option value="2">Cancelada</option>
-								<option value="3">Finalizada</option>
-							</select>
-						</div>
-					</div>
-				<!--Aqui termina la tabla  -->
+					
+					
 				</div>
-			<br>
-			<br>
-			<button class="btn btn-primary pull-right">Guardar Cambios</button>	
+
+				<div>
+					<?php foreach ($tasks as $tarea): ?>
+
+							<div class="elemento" style="width:33%"> <?php echo $tarea->task_name; ?> </div>
+							<div class="elemento" style="width:33%"> <?php echo $tarea->task_status; ?> </div>
+							<div class="elemento" style="width:33%">
+								<select name="tarea" id="">
+									<option value="Proceso">En Proceso</option>
+									<option value="Cancelada">Cancelada</option>
+									<option value="Terminada">Finalizada</option>
+								</select>
+							</div>
+
+					<?php endforeach; ?>
+				</div>
+
+						
+			</div>
+
+			<div class="row  text-center">
+				<br>
+				<br>
+				<button class="btn btn-primary">Guardar Cambios</button>
+			</div>
+				
 			<!-- Aqui termina el col-md-12 -->
 			</div>
 		<!-- Aqui termina el main-row -->

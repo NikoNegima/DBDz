@@ -32,10 +32,10 @@
 							<div class = "elemento" style="width:25%"> <?php echo $voluntario->name; ?> </div>
 							<div class = "elemento" style="width:25%"> <?php echo $voluntario->performance_area; ?> </div>
 							<div class = "elemento" style="width:25%"> <?php echo $voluntario->experience; ?> </div>
-							<div class = "elemento" style="width:25%">
+							<div class = "elemento" style="width:25%"> 
 							<!-- Combobox donde se muestran las tareas de la mision --> 
 								<select name = <?php echo $voluntario->id;?> >
-								<?php debug($mission_tasks->all()); ?>
+								
 									<?php foreach ($mission_tasks as $tasks): ?>
 										
 										<option> <?php echo $tasks->task_name ?></option>

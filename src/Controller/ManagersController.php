@@ -53,6 +53,23 @@ class ManagersController extends AppController
 
     public function gestionarestados()
     {
+        //Se obtiene el ID del usuario actual
+        $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+
+        //Consulta a la bd con todas las misiones 
+        $query2 = TableRegistry::get('Missions')->find();
+
+        //Consulta a la bd con todas las tareas 
+        $query = TableRegistry::get('Tasks')->find();
+
+        //Se busca la id de la mision
+        $id_mission = $query2->where(['manager_id' => $userInfo['id']])->first();
+
+        //Se obtienen todas las tareas de la mision actual
+        $tasks = $query->where(['mission_id' => $id_mission['id']]);
+
+        //Le pasamos los elementos rescatados a la vista
+        $this->set(compact('tasks'));
 
     }
 
@@ -64,19 +81,21 @@ class ManagersController extends AppController
 
     public function definirvoluntario()
     {
-        //Consulta a la bd de todos los voluntarios
-        $this->loadModel('Volunteers');
-        $vol = $this->Volunteers->find('all');
-        
 
         //Se obtiene el ID del usuario actual
         $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
 
-        //Consulta a la bd con todas las tareas 
+        //Se obtienen todos los voluntarios
+        $query3 = TableRegistry::get('Volunteers')->find();
+
+        //Consulta a la bd con todas las misiones 
         $query2 = TableRegistry::get('Missions')->find();
 
         //Consulta a la bd con todas las tareas 
         $query = TableRegistry::get('Tasks')->find();
+
+        //Se buscan los voluntarios disponibles
+        $vol = $query3->where(['disponibility' => 1]);
 
         //Se busca la id de la mision
         $id_mission = $query2->where(['manager_id' => $userInfo['id']])->first();
