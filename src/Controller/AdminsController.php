@@ -68,27 +68,37 @@ class AdminsController extends AppController
 
             $userInfo = $this->Admins->findByUserId($this->Auth->user('id'))->first();
 
-            $emergenciesTable    = TableRegistry::get('Emergencies');
+            $emergenciesTable = TableRegistry::get('Emergencies');
 
-            $emergency = $emergenciesTable->newEntity();
-            $emergency->admin_id = $userInfo['id'];
-            $emergency->commune_id = $this->request->data['comuna'];
-            $emergency->date = $this->request->data['fechaemergencia'];
-            $emergency->place = $this->request->data['lugaremergencia'];
-            $emergency->severity = $this->request->data['gravedad'];
-            $emergency->description = $this->request->data['descemergencia'];
-            $emergency->status = "En Progreso";
+            //Cambie los nombres de las partes del formulario para que encajaran con las columnas
+            //de la tabla, asi puedo pasarle todo de una en el new entity, sumandole las cosas que no estan
+            //en el formulario que son admin_id y status. En el new entity se me valida todo.
 
-            if($emergenciesTable->save($emergency))
-            {
-                $this->Flash->success('Emergencia creada con exito');
-                $session = $this->request->session();
-                $session->write('eme_id', $emergency['id']);
-                return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
+            $emergency = $emergenciesTable->newEntity(array_merge([
+                'admin_id' => $userInfo['id'],
+                'status' => 'En Progreso'], $this->request->data));
+
+            //Si hay errores en la validacion, muestra el error
+            if(empty($emergency->errors())) {
+                
+                if($emergenciesTable->save($emergency))
+                {
+                    $this->Flash->success('Emergencia creada con exito');
+                    $session = $this->request->session();
+                    $session->write('eme_id', $emergency['id']);
+                    return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
+                }
+                else{
+                    $this->Flash->error('No se pudo crear emergencia');
+                }
+            } else {
+                $this->Flash->error('Debe llenar correctamente todos los campos');
             }
-            else{
-                $this->Flash->error('No se pudo crear emergencia');
-            }
+
+            
+            
+
+            
 
         }       
     }

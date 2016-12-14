@@ -64,20 +64,23 @@ class EmergenciesTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->date('date')
             ->requirePresence('date', 'create')
-            ->notEmpty('date');
+            ->notEmpty('date', 'Se requiere ingresar una fecha')
+            ->add('date', 'format', [
+                'rule' => ['date', 'ymd'],
+                'message' => 'Se requiere ingresar una fecha valida en el formato correcto'
+                ]);
 
         $validator
             ->requirePresence('place', 'create')
-            ->notEmpty('place');
+            ->notEmpty('place', 'Se requiere ingresar un lugar');
 
         $validator
             ->requirePresence('severity', 'create')
             ->notEmpty('severity');
 
         $validator
-            ->allowEmpty('description');
+            ->allowEmpty('description', 'Se requiere ingresar una descripcion');
 
         $validator
             ->requirePresence('status', 'create')

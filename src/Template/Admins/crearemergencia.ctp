@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label for="comuna" class="control-label col-md-3 ">Comuna:  </label>
                 <div class="col-md-6 col-md-offset combobox" style="overflow-x: visible;">
-                    <select name="comuna" class="form-control" id="region">
+                    <select name="commune_id" class="form-control" id="region">
                         <?php foreach ($communes as $commune): ?>
                             <option value=<?php echo $commune->id;?>><?php echo $commune->name;?></option>  
                         <?php endforeach; ?>
@@ -48,11 +48,12 @@
                 </div>
             </div>
 
+
             <!-- gravedad de la emergencia -->
             <div class="form-group">
                 <label for="region" class="control-label col-md-3 ">Gravedad:  </label>
                 <div class="col-md-6 col-md-offset combobox" style="overflow-x: visible;">
-                    <select name="gravedad" class="form-control" id="region">
+                    <select name="severity" class="form-control" id="region">
                         <option value="L">Leve</option>
                         <option value="M">Medio</option>
                         <option value="G">Grave</option>                         
@@ -72,7 +73,7 @@
             <div class="form-group">
                 <label for="user" class="control-label col-md-3">Fecha de la Emergencia: </label>
                 <div class="col-md-3">
-                    <input type="text" name="fechaemergencia" class="form-control" placeholder="AAAA/MM/DD">
+                    <input type="text" name="date" class="form-control" placeholder="AAAA/MM/DD">
                 </div>
             </div>
 
@@ -80,7 +81,7 @@
             <div class="form-group">
                 <label for="user" class="control-label col-md-3">Lugar de la Emergencia: </label>
                 <div class="col-md-3">
-                    <input type="text" name="lugaremergencia" class="form-control" placeholder="Nombre Lugar">
+                    <input type="text" name="place" class="form-control" placeholder="Nombre Lugar">
                 </div>
             </div>
 
@@ -88,7 +89,7 @@
             <div class="form-group">
                 <label for="user" class="control-label col-md-3">Descripción: </label>
                 <div class="col-md-9">
-                    <textarea type="text" rows="6" name="descemergencia" class="form-control"></textarea>
+                    <textarea type="text" rows="6" name="description" class="form-control"></textarea>
                 </div>
             </div>
          

@@ -1,6 +1,8 @@
 <!-- File: src/Template/Users/login.ctp -->
 <?php // $this->layout = '' ?>
 
+
+
 <?= $this->Flash->render('auth') ?>
 	<header>
 		<div class="container">
@@ -46,6 +48,7 @@
 				</div>
 			</div>
 
+			
 			<div class="form-group">
 				<div class="pull-left col-md-offset-2">
 					<?php 
@@ -62,6 +65,7 @@
 			</div>
 		</form>
 	</div>
+	<?= $this->Flash->render('auth') ?>
 
 
 </body>

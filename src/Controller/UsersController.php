@@ -34,12 +34,12 @@ class UsersController extends AppController
                     }
                     
                 } else {
-                    $this->Flash->error('No se tiene la autorización necesaria');
+                    $this->Flash->error('No se tiene la autorización necesaria', ['key' => 'auth']);
                     
                 }
 
             } else {
-                $this->Flash->error(__('Nombre de usuario o contraseña incorrectos'));
+                $this->Flash->error(__('Nombre de usuario o contraseña incorrectos', ['key' => 'auth']));
             }
             
         }
