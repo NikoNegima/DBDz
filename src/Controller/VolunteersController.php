@@ -49,6 +49,7 @@ class VolunteersController extends AppController
     		$userInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
       		$fullname = $userInfo['name'] . " " . $userInfo['last_name_first'];
             $this->set('fullname', $fullname);
+            $this->set('user_id', $userInfo['id']);
 
     	} else {
     		$this->set('fullname', '');
@@ -93,9 +94,38 @@ class VolunteersController extends AppController
     public function asignarhabilidades()
     {
          //Consultando por todas las skills del usuarios!
+
+
          $this->loadModel('Skills');
          $skills = $this->Skills->find('all');
          $this->set(compact('skills')); 
+
+         $userInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
+         $id_voluntario = $userInfo['id'];
+
+         if($this->request->is('post')){
+            $skillsvolunteersTable = TableRegistry::get('SkillsVolunteers');
+            $skillvolunteer = $skillsvolunteersTable->newEntity();
+
+            $dominio = NULL;
+            $dominio = $this->request->data['dominio'];
+
+            debug($dominio);
+
+            $skillvolunteer->volunteer_id = $id_voluntario;
+            $skillvolunteer->skill_id = $this->request->data['habilidad'];
+
+            $skillvolunteer->domain_degree = $dominio;
+
+            if($skillsvolunteersTable->save($skillvolunteer)){
+                $this->Flash->success('Habilidad agregada con exito');
+                return $this->redirect(['controller' => 'Volunteers', 'action' => 'asignarhabilidades']);
+            }
+            else{
+                $this->Flash->error('No se agregar habilidad');
+            }
+
+         }
     }
 
     public function aceptartareas()

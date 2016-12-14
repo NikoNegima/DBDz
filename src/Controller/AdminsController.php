@@ -168,20 +168,6 @@ class AdminsController extends AppController
                 $this->Flash->error('No se agregar habilidad');
             }
             
-
-            /*$testTable = TableRegistry::get('Tests');
-            $test = $testTable->newEntity();
-
-            $test->nombre = "nombretesteo";
-
-            if($testTable->save($test)){
-                $this->Flash->success('Habilidad agregada con exito');
-                return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
-               }
-            else{
-                $this->Flash->error('No se agregar habilidad');
-            }*/
-
         }
     }
 
