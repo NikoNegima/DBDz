@@ -129,6 +129,31 @@ class ManagersController extends AppController
 
    public function gestionarsolicitudes()
     {
+        //Se obtiene el ID del usuario actual
+        $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+
+        //Se obtienen todos los voluntarios
+        $query3 = TableRegistry::get('Volunteers')->find();
+
+        //Consulta a la bd con todas las misiones 
+        $query2 = TableRegistry::get('Missions')->find();
+
+        //Consulta a la bd con todas las tareas 
+        $query = TableRegistry::get('Tasks')->find();
+
+        //Se buscan los voluntarios disponibles
+        $vol = $query3->where(['disponibility' => 1]);
+
+        //Se busca la id de la mision
+        $id_mission = $query2->where(['manager_id' => $userInfo['id']])->first();
+
+        //Ahora buscamos las tareas que sean de la mision actual
+        $mission_tasks = $query->where(['mission_id' => $id_mission['id']]);
+
+
+        //Ahora le pasamos a las vistas las variables necesarias
+        $this->set(compact('vol'));
+        $this->set(compact('mission_tasks'));
 
     }
 
@@ -211,4 +236,81 @@ class ManagersController extends AppController
             
         }
     }
+<<<<<<< HEAD
+=======
+
+    //Método que envia un mensaje desde el encargado a un voluntario
+    public function enviarmensaje()
+    {
+         //Consultando por lo ejecutores posibles (deberian ser los de la misma mision encargado)
+         $this->loadModel('Volunteers');
+         $volunteers = $this->Volunteers->find('all');
+         $this->set(compact('volunteers'));   
+         
+         if($this->request->is('post')){
+
+            $managerInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+
+            $notificationsTable = TableRegistry::get('Notifications');
+            $notification = $notificationsTable->newEntity();
+
+            $notification->manager_id = $managerInfo['id'];
+            $notification->volunteer_id = $this->request->data['voluntario'];
+            $notification->detail = $this->request->data['msj'];
+            $notification->urgency_level = $this->request->data['gravedad'];
+            $notification->subject = "Mensaje";
+            
+            if($notificationsTable->save($notification)){
+                $this->Flash->success('Mensaje enviado correctamente.');
+                return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
+            }
+            else{
+                
+                $this->Flash->error('No se pudo enviar el mensaje.');
+            }
+
+         }
+
+    }
+
+    //Funcion que permite ingresar habilidades aa la emergencia
+    public function addHab()
+    {
+
+        //Se obtiene el ID del usuario actual
+        $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+
+        //Se obtiene la id de la mision actual
+        $query = TableRegistry::get('Missions')->find();
+        $eme_id = $query->where(['manager_id' => $userInfo['id']])->first();
+
+        //Consultando por las misiones
+        $this->loadModel('Skills');
+        $hab = $this->Skills->find('all');
+
+        //Se le pasa a las vistas las variables necesarias
+        $this->set(compact('hab'));
+        $this->set('id_actual',$eme_id['id']);
+
+        if($this->request->is('post')){
+
+            $emergencies_skillsTable = TableRegistry::get('EmergenciesneedSkills');
+            $emergency_skill = $emergencies_skillsTable->newEntity();
+
+            $emergency_skill->emergency_id = $eme_id['id'];
+            $emergency_skill->skill_id = $this->request->data['habilidad'];
+
+            if($emergencies_skillsTable->save($emergency_skill)){
+                $this->Flash->success('Habilidad agregada con exito');
+                return $this->redirect(['controller' => 'Managers', 'action' => 'addhab']);
+            }
+            else{
+                $this->Flash->error('No se agrega habilidad');
+            }
+            
+        }
+
+    }
+
+>>>>>>> b173d388abde6baa7781467e59199af97ffb2659
 }

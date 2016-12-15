@@ -25,6 +25,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/Managers/"><font size="2">Home </font><span class="sr-only">(current)</span></a></li>
+        <li><a class="" href="/Managers/addhab"><font size="1">Añadir habilidad</font></a></li>
         <li><a class="" href="/Managers/definirvoluntario"><font size="1">Designar Voluntarios a Tareas</font></a></li>
          <li><a class="" href="/Managers/def_task"><font size="1">Crear Tareas</a></font></li>
 		    <li><a class="" href="/Managers/gestionarestados"><font size="1">Gestionar Estados</font></a></li>
