@@ -86,6 +86,10 @@ class EmergenciesTable extends Table
             ->requirePresence('status', 'create')
             ->notEmpty('status');
 
+        $validator
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
+
         return $validator;
     }
 

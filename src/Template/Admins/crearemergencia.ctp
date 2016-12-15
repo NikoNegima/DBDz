@@ -65,7 +65,7 @@
             <div class="form-group">
                 <label for="user" class="control-label col-md-3">Nombre de la Emergencia: </label>
                 <div class="col-md-6">
-                    <input type="text" name="nombreemergencia" class="form-control" placeholder="Ingrese Nombre de la Emergencia">
+                    <input type="text" name="name" class="form-control" placeholder="Ingrese Nombre de la Emergencia">
                 </div>
             </div>
 

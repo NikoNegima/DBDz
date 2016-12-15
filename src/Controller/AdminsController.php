@@ -78,6 +78,7 @@ class AdminsController extends AppController
                 'admin_id' => $userInfo['id'],
                 'status' => 'En Progreso'], $this->request->data));
 
+            debug($emergency);
             //Si hay errores en la validacion, muestra el error
             if(empty($emergency->errors())) {
                 
