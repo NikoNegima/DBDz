@@ -19,8 +19,8 @@ use Cake\ORM\TableRegistry;?>
 					<div class="tabla" >
 						<div class="filaHeader">
 							<!--Si se agregan nuevas elementos, hay que modificar el width--> 
-							<div class="elementoHeader" style="width:25%">Nombre Emergencia</div>
-							<div class="elementoHeader" style="width:25%">Descripción</div>
+							<div class="elementoHeader" style="width:20%">Nombre Emergencia</div>
+							<div class="elementoHeader" style="width:30%">Descripción</div>
 							<div class="elementoHeader" style="width:25%">Estado Emergencia</div>
 							<div class="elementoHeader" style="width:25%">Cambiar Estado</div>
 						</div>
@@ -55,16 +55,16 @@ use Cake\ORM\TableRegistry;?>
 							$id_emer = $emergency['id'];
 
 							if($id_admin_emergencia == $admin_id_actual): ?>
-								<div class="elemento" style="width:25%"><?php echo $emergency['name'];?></div>
-								<div class="elemento" style="width:25%"><?php echo $emergency['description'];?></div>
-								<div class="elemento" style="width:25%"><?php echo $emergency['status'];?></div>
+								<div class="elemento" style="width:20%"><?php echo $emergency['name'];?></div>
+								<div class="elemento" style="width:30%"><?php echo $emergency['description'];?></div>
+								<div class="elemento" style="width:24%"><?php echo $emergency['status'];?></div>
 								<div class="elemento" style="width:25%"> 
 									<?php echo '<select name="combobox'. $id_emer .'" id="">';?>
                 						<option value="En Progreso">En Progreso</option>
                 						<option value="Cancelada">Cancelada</option>
                 						<option value="Finalizada">Finalizada</option>
                 					</select>
-								 </div>
+								</div>
 							<?php endif; ?>
 						<?php endforeach; ?>
 
