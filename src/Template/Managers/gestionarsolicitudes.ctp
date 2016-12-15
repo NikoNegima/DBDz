@@ -19,13 +19,7 @@
 				<div class="row"> 
 					
 					<!-- Se muestran todas las tareas de la mision -->
-					<select class="text-center">
-
-						<?php foreach ($mission_tasks as $tasks): ?>
-							<option> <?php echo $tasks->task_name; ?> </option>
-						<?php endforeach; ?>
-
-					</select>
+					
 
 				<br>
 				<br>
@@ -42,7 +36,15 @@
 
 						<div class="fila">
 							<!-- Se muestran los elementos de la tarea seleccionada -->
-							<div class="elemento" style="width:33%"> <?php echo $tasks->task_name; ?> </div>
+							<!--<div class="elemento" style="width:33%"> <?php echo $tasks->task_name; ?> </div>-->
+							<div class="elemento" style="width:33%"> 
+								<select class="text-center">
+									<?php foreach ($mission_tasks as $tasks): ?>
+										<option> <?php echo $tasks->task_name; ?> </option>
+									<?php endforeach; ?>
+								</select> 
+							</div>
+							
 							<div class="elemento" style="width:33%"> <?php echo $tasks->volunteer_amount; ?> </div>
 							<div class="elemento" style="width:34%"> <?php echo $tasks->task_status; ?> </div>
 
