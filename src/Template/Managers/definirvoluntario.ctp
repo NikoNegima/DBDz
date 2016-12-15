@@ -3,10 +3,13 @@
 
 <div class="container">
 
+    <?php 
+        echo $this->Form->create(NULL, ['class' => 'form-horizontal']); 
+    ?>
+
 	<!-- Cabecera -->
 	<div class="section"><div class="container"><div class="row"><div class="col-md-12"><h3>Solicitar voluntarios</h3></div></div></div></div><div class="row">
 
-	<form class="form-horizontal">
 
 		<div class="row">  	
 	            <!-- Detalles de la mision -->
@@ -38,7 +41,7 @@
 								
 									<?php foreach ($mission_tasks as $tasks): ?>
 										
-										<option> <?php echo $tasks->task_name ?></option>
+										<option value=<?php echo $tasks['id']; ?>> <?php echo $tasks->task_name ?></option>
 
 									<?php endforeach; ?>
 								</select>	
@@ -55,9 +58,17 @@
 
 	    <div class="row">
 			<div class="text-center">
-		        		<button type="button" class="btn btn-primary"">Terminar</button>
+		        		           	<?php
+            	echo $this->Form->button('Terminar', ['type' => 'submit', 'class' => 'btn btn-primary']);
+        	?>
 		    </div>
 		</div>
-	</form>
+
+
+<?php
+        echo $this->Form->end();
+    ?>
 
 </div>
+</body>
+</html>

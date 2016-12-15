@@ -155,6 +155,7 @@ class ManagersController extends AppController
         //Se buscan los voluntarios disponibles
         $vol = $query3->where(['disponibility' => 1]);
 
+
         //Se busca la id de la mision
         $id_mission = $query2->where(['manager_id' => $userInfo['id']])->first();
 
@@ -163,7 +164,40 @@ class ManagersController extends AppController
 
         //Ahora le pasamos a las vistas las variables necesarias
         $this->set(compact('vol'));
-        $this->set(compact('mission_tasks'));
+        $this->set('mission_tasks', $mission_tasks);
+
+        if($this->request->is('post')){
+            foreach ($vol as $voluntario) {
+                $id_vol = $voluntario['id'];
+                //debug($this->request->data['combobox' . $voluntario['id']]);
+                if($this->request->data['comboboxvol' . $voluntario['id']] == "ENVIAR"){   
+                    $notificationTable    = TableRegistry::get('Notifications');
+                    $notification = $notificationTable->newEntity();
+                    $fullneim = $voluntario['name'] . " " . $voluntario['last_name_first'];
+
+                    $id_tarea = $this->request->data['comboboxtsk'];
+                    $tarea = $query->where(['id' => $id_tarea])->first();
+
+                    $notification->manager_id = $userInfo['id'];
+                    $notification->volunteer_id = $voluntario['id'];
+                    $notification->detail = "Se solicita a usted, voluntario: " . $fullneim . " asistir a la tarea: " . $tarea['task_name'] . ".";
+                    $notification->urgency_level = 1;
+                    $notification->subject = "solicitud";
+                    $notification->task_related = $id_tarea;
+                    $notification->status = 1;
+
+                    if($notificationTable->save($notification))
+                    {
+                        $this->Flash->success('Solicitud enviada con exito');
+                    }
+                    else{
+                        $this->Flash->error('No se pudo enviar śolicitud');
+                    }     
+                }
+            }
+
+            return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
+        }
 
     }
 
@@ -210,6 +244,38 @@ class ManagersController extends AppController
         //Ahora le pasamos a las vistas las variables necesarias
         $this->set(compact('vol'));
         $this->set(compact('mission_tasks'));
+
+        if($this->request->is('post'))
+        {
+            $notificationTable    = TableRegistry::get('Notifications');
+            $notification = $notificationTable->newEntity();
+
+            foreach($vol as $voluntario){
+                $fullneim = $voluntario['name'] . " " . $voluntario['last_name_first'];
+
+                $id_tarea = $this->request->data[$voluntario['id']];
+                $tarea = $query->where(['id' => $id_tarea])->first();
+
+                $notification->manager_id = $userInfo['id'];
+                $notification->volunteer_id = $voluntario['id'];
+                $notification->detail = "Se solicita a usted, voluntario: " . $fullneim . " asistir a la tarea: " . $tarea[ 'task_name'] . ".";
+                $notification->urgency_level = 1;
+                $notification->subject = "solicitud";
+                $notification->task_related = $id_tarea;
+                $notification->status = 1;
+
+                if($notificationTable->save($notification))
+                {
+                    $this->Flash->success('Solicitud enviada con exito');
+                }
+                else{
+                    $this->Flash->error('No se pudo enviar śolicitud');
+                }
+            }
+
+            return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
+
+        }
 
 
     }
