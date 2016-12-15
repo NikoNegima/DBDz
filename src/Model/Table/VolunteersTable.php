@@ -175,7 +175,7 @@ class VolunteersTable extends Table
     public function getMessages($id_volunteer){
 
         $connection = ConnectionManager::get('default');
-        $result = $connection->execute('SELECT m.name, m.last_name_first, n.detail, n.urgency_level
+        $result = $connection->execute('SELECT m.name, m.last_name_first, n.detail, n.urgency_level, n.subject
                                         FROM managers AS m
                                         INNER JOIN notifications AS n
                                         ON m.id = n.manager_id
