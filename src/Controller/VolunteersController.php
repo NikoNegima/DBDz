@@ -130,13 +130,8 @@ class VolunteersController extends AppController
             //Query para seleccionar voluntario por user_id
             $userInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
             $datos_mensajes = $this->Volunteers->getMessages($userInfo['id']);
-
             $this->set('datos_mensajes', $datos_mensajes);
-
-
         }
-
-        
     }
 
 

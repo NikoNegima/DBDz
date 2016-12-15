@@ -6,6 +6,7 @@
 
 <div class="container">
 		<div class="main-row">
+		<hr style="border:1px solid black">
 			<?php foreach ($datos_mensajes as $dato): ?> 
 			<div class="row col-md-12">
 			<!--Vista ver usuario-->	
@@ -33,6 +34,16 @@
 					<label for="" class="control-label">Mensaje:</label>
 					<p><?php echo $dato['detail'] ?></p>
 				</div>
+				<div class="col-md-12 text-center">
+					<?php
+						if($dato['subject'] != "Mensaje"){
+			        		echo $this->Form->button('Aceptar solicutud', ['type' => 'submit', 'class' => 'btn btn-primary']);
+						}
+		        	?>
+		        	<br><br>
+				</div>
+				<br><br>
+				<hr style="border:1px solid black">
 			</div>
 			<?php endforeach; ?> 
 		</div>
