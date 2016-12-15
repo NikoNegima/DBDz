@@ -4,7 +4,10 @@ namespace App\Model\Table;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
+use Cake\ORM\TableRegistry;
+use Cake\Datasource\ConnectionManager;
 use Cake\Validation\Validator;
+
 
 /**
  * Missions Model
@@ -98,5 +101,25 @@ class MissionsTable extends Table
         $rules->add($rules->existsIn(['admin_id'], 'Admins'));
 
         return $rules;
+    }
+
+    //Método que recupera las misiones asignadas a un encargado
+    public function missionsPerManager($id_manager){
+        $missions = $this->find()
+                         ->where(['manager_id' => $id_manager]);
+        return $missions;
+    }
+
+    //Método que recupera las emergencias y sus respectivas misiones
+    public function emergenciesWithMissions($manager_id){
+
+       $connection = ConnectionManager::get('default');
+       $result = $connection->execute('SELECT e.name, m.mission_name, m.status
+                                       FROM emergencies AS e, missions AS m, managers AS ma
+                                       WHERE e.id = m.manager_id
+                                       AND ma.id = m.manager_id
+                                       AND ma.id = :id', ['id' => $manager_id])->fetchAll('assoc');
+       return $result;
+
     }
 }
