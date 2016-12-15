@@ -87,7 +87,7 @@ class AdminsController extends AppController
                     $this->Flash->success('Emergencia creada con exito');
                     $session = $this->request->session();
                     $session->write('eme_id', $emergency['id']);
-                    return $this->redirect(['controller' => 'Admins', 'action' => 'addhab']);
+                    return $this->redirect(['controller' => 'Admins', 'action' => 'addmision']);
                 }
                 else{
                     $this->Flash->error('No se pudo crear emergencia');
