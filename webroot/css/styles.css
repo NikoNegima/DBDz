@@ -1,4 +1,10 @@
 
+body{	
+	background-image: url("/img/fondo.png");
+	background-size: cover;
+}
+
+
 .title {
 	position: absolute;
 	left: 0px; 
