@@ -116,7 +116,7 @@ class MissionsTable extends Table
        $connection = ConnectionManager::get('default');
        $result = $connection->execute('SELECT e.name, m.mission_name, m.status
                                        FROM emergencies AS e, missions AS m, managers AS ma
-                                       WHERE e.id = m.manager_id
+                                       WHERE e.id = m.emergency_id
                                        AND ma.id = m.manager_id
                                        AND ma.id = :id', ['id' => $manager_id])->fetchAll('assoc');
        return $result;
