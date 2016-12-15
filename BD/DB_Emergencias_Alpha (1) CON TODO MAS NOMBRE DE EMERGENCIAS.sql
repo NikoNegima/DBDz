@@ -191,7 +191,8 @@ CREATE TABLE `notifications` (
   `detail` text,
   `urgency_level` int(11) NOT NULL,
   `subject` varchar(15) NOT NULL,
-  `task_related` int(11) DEFAULT '-1'
+  `task_related` int(11) DEFAULT '-1',
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

@@ -51,6 +51,30 @@ class ManagersController extends AppController
         
     }
 
+    //Método que envia un mensaje desde el encargado a un voluntario
+    public function enviarmensaje()
+    {
+         //Consultando por lo ejecutores posibles (deberian ser los de la misma mision encargado)
+         $this->loadModel('Volunteers');
+         $volunteers = $this->Volunteers->find('all');
+         $this->set(compact('volunteers'));   
+         
+         if($this->request->is('post')){
+
+            $managerInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+            $this->loadModel('Notifications');
+            if($this->Notifications->saveMessage($this->request->data, $this->request->data['voluntario'], $managerInfo->id, 1, "Mensaje")){
+                $this->Flash->success('Mensaje enviado correctamente.');
+                return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
+            }
+            else{
+                
+                $this->Flash->error('No se pudo enviar el mensaje.');
+            }
+
+         }
+    }
+
     public function gestionarestados()
     {
         //Se obtiene el ID del usuario actual
@@ -187,39 +211,4 @@ class ManagersController extends AppController
             
         }
     }
-
-    //Método que envia un mensaje desde el encargado a un voluntario
-    public function enviarmensaje()
-    {
-         //Consultando por lo ejecutores posibles (deberian ser los de la misma mision encargado)
-         $this->loadModel('Volunteers');
-         $volunteers = $this->Volunteers->find('all');
-         $this->set(compact('volunteers'));   
-         
-         if($this->request->is('post')){
-
-            $managerInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
-
-            $notificationsTable = TableRegistry::get('Notifications');
-            $notification = $notificationsTable->newEntity();
-
-            $notification->manager_id = $managerInfo['id'];
-            $notification->volunteer_id = $this->request->data['voluntario'];
-            $notification->detail = $this->request->data['msj'];
-            $notification->urgency_level = $this->request->data['gravedad'];
-            $notification->subject = "Mensaje";
-            
-            if($notificationsTable->save($notification)){
-                $this->Flash->success('Mensaje enviado correctamente.');
-                return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
-            }
-            else{
-                
-                $this->Flash->error('No se pudo enviar el mensaje.');
-            }
-
-         }
-
-    }
-
 }
