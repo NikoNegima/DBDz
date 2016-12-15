@@ -302,5 +302,16 @@ class ManagersController extends AppController
 
     }
 
+    public function vermensajese() {
+
+        if($this->Auth->user('id') != null) {
+            //Query para seleccionar voluntario por user_id
+            $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+            $datos_mensajes = $this->Managers->getMessages($userInfo['id']);
+
+            $this->set('datos_mensajes', $datos_mensajes);
+        }
+    }
+
 
 }  

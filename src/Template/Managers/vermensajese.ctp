@@ -16,7 +16,17 @@
 				</div>
 				<div class="col-md-6">
 					<label for="" class="control-label">Urgencia: </label>
-					<p><?php echo $dato['urgency_level']; ?></p>
+					<p><?php 
+					if($dato['urgency_level'] == 1){
+						echo "Baja";
+					} 
+					elseif($dato['urgency_level'] == 2){
+						echo "Media";
+					}
+					else{
+						echo "Alta";
+					}
+					?></p>
 				</div>
 				<br><br>
 				<div class="col-md-12">

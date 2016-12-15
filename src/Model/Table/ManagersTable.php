@@ -134,7 +134,6 @@ class ManagersTable extends Table
                                         ON v.id = n.volunteer_id
                                         WHERE n.manager_id = :id_manager
                                         AND status = :status', ['id_manager' => $id_manager, 'status' => 0])->fetchAll('assoc');
-        debug($result);
         return $result;
     }
 }

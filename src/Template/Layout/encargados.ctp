@@ -31,6 +31,7 @@
 		    <li><a class="" href="/Managers/gestionarestados"><font size="1">Gestionar Estados</font></a></li>
         <li><a class="" href="/Managers/gestionarsolicitudes"><font size="1">Gestionar Solicitudes</font></a></li>
         <li><a class="" href="/Managers/enviarmensaje"><font size="1">Enviar Mensaje</font></a></li>
+        <li><a class="" href="/Managers/vermensajese"><font size="1">Ver Mensajes</font></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><p class="navbar-text"><font size="2">Conectado como: <?= $fullname ?> </font></p></li> <!-- la variable $fullname tiene una string con el nombre del usuario -->
