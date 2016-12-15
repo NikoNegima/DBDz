@@ -5,6 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Datasource\ConnectionManager;
+
 
 /**
  * Managers Model
@@ -120,5 +122,19 @@ class ManagersTable extends Table
         $rules->add($rules->existsIn(['admin_id'], 'Admins'));
 
         return $rules;
+    }
+
+    //Método que retorna los mensajes que le fueron enviados a un encargado
+    public function getMessages($id_manager){
+
+        $connection = ConnectionManager::get('default');
+        $result = $connection->execute('SELECT v.name, v.last_name_first, n.detail, n.urgency_level
+                                        FROM volunteers AS v
+                                        INNER JOIN notifications AS n
+                                        ON v.id = n.volunteer_id
+                                        WHERE n.manager_id = :id_manager
+                                        AND status = :status', ['id_manager' => $id_manager, 'status' => 0])->fetchAll('assoc');
+        debug($result);
+        return $result;
     }
 }
