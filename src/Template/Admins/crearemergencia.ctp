@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label for="region" class="control-label col-md-3 ">Region:  </label>
                 <div class="col-md-6 col-md-offset combobox" style="overflow-x: visible;">
-                    <select name="region" class="form-control" id="region">
+                    <select name="region_id" class="form-control" id="region">
                         <option value="1">I REGION</option>
                         <option value="2">II REGION</option>
                         <option value="3">III REGION</option>
