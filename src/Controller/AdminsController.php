@@ -22,6 +22,10 @@ class AdminsController extends AppController
     public function index()
     {
 
+        $this->loadModel('Emergencies');
+        $emer = $this->Emergencies->find('all');
+        $this->set(compact('emer'));
+
     }
 
     //Para que solo aquellos que tengan la autorizacion requerida puedan acceder a este controlador, creo.
