@@ -20,8 +20,9 @@ class VolunteersController extends AppController
      */
     public function index()
     {
-    	
-        
+    	$this->loadModel("Tasks");
+        $tasks = $this->Tasks->getTasks($this->Auth->user('id'));
+        $this->set(compact('tasks'));
     }
 
     

@@ -5,6 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Datasource\ConnectionManager;
+
 
 /**
  * Tasks Model
@@ -102,5 +104,16 @@ class TasksTable extends Table
         $rules->add($rules->existsIn(['mission_id'], 'Missions'));
 
         return $rules;
+    }
+
+    //Método que retorna las tareas asignadas a un voluntario
+    public function getTasks($id_volunteer){
+        $connection = ConnectionManager::get('default');
+        $result = $connection->execute('SELECT t.task_name, t.task_status, t.guide_doc
+                                        FROM tasks AS t
+                                        INNER JOIN volunteers AS v
+                                        ON t.id = v.task_id
+                                        WHERE v.user_id = :id', ['id' => $id_volunteer])->fetchAll('assoc');
+        return $result;
     }
 }

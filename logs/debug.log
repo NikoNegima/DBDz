@@ -9178,3 +9178,435 @@ Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
 
 
 
+2016-12-16 01:32:37 Notice: Notice (8): Undefined variable: tasks in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 37]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 37
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:32:37 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 41]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:32:37 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 45]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 45
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:32:37 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 50]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 50
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:08 Notice: Notice (8): Undefined variable: tasks in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 37]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 37
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:08 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 41]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:08 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 45]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 45
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:08 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 50]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 50
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:38 Notice: Notice (8): Undefined variable: tasks in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 37]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 37
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:38 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 41]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:38 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 45]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 45
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:33:38 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 50]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 50
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:36:29 Notice: Notice (8): Undefined variable: tasks in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 41]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:36:29 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 45]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 45
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:36:29 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 49]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 49
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-12-16 01:36:29 Notice: Notice (8): Undefined variable: task in [/home/ariel/Escritorio/Lab 3 DBD/DBDz/src/Template/Volunteers/index.ctp, line 54]
+Request URL: /volunteers
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Volunteers/index.ctp, line 54
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1014
+Cake\View\View::_render() - CORE/src/View/View.php, line 973
+Cake\View\View::render() - CORE/src/View/View.php, line 597
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
