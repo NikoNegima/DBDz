@@ -1,30 +1,30 @@
 <!-- File: src/Template/Managers/index.ctp -->
-<?php $this->layout = 'voluntario'; ?>
+<?php $this->layout = 'voluntarios'; ?>
 
 <title>Ver Mensajes - Voluntario</title>
 
 
 <div class="container">
 		<div class="main-row">
-			<?php //foreach ($var as $dato): ?> 
+			<?php foreach ($datos_mensajes as $dato): ?> 
 			<div class="row col-md-12">
 			<!--Vista ver usuario-->	
 
 				<div class="col-md-6">
 					<label for="" class="control-label">Enviado por:</label>
-					<p><?php //echo $dato['a']; ?></p>
+					<p><?php echo $dato['name'] . ' ' . $dato['last_name_first']; ?></p>
 				</div>
 				<div class="col-md-6">
 					<label for="" class="control-label">Urgencia: </label>
-					<p><?php //echo $dato['b']; ?></p>
+					<p><?php echo $dato['urgency_level']; ?></p>
 				</div>
 				<br><br>
 				<div class="col-md-12">
 					<label for="" class="control-label">Mensaje:</label>
-					<p><?php //echo $dato['c'] ?></p>
+					<p><?php echo $dato['detail'] ?></p>
 				</div>
 			</div>
-			<?php //endforeach; ?> 
+			<?php endforeach; ?> 
 		</div>
 	</div>
 	

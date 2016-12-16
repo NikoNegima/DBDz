@@ -28,6 +28,7 @@
         <li><a class="" href="/Volunteers/enviarMensaje">Enviar Mensaje</a></li>
 		    <li><a class="" href="/Volunteers/aceptartareas">Aceptar Tareas</a></li>
         <li><a class="" href="/Volunteers/asignarhabilidades">Asignar Habilidades</a></li>
+        <li><a class="" href="/Volunteers/vermensajesv">Ver Mensajes</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><p class="navbar-text">Conectado como: <?= $fullname ?> </p></li> <!-- la variable $fullname tiene una string con el nombre del usuario -->
