@@ -35,11 +35,11 @@
 					<p><?php echo $dato['detail'] ?></p>
 				</div>
 				<div class="col-md-12 text-center">
-					<?php
-						if($dato['subject'] != "Mensaje"){
-			        		echo $this->Form->button('Aceptar solicutud', ['type' => 'submit', 'class' => 'btn btn-primary']);
-						}
-		        	?>
+					<?= $this->Html->link('Aceptar Solicitud', 
+														['controller' => 'Volunteers', 'action' => 'aceptarea', $dato['task_related']], 
+														['class' => 'btn btn-danger', 'style' => 'padding: 1px 10px', "confirm"=>'¿Está seguro de aceptar esta tarea?']); 
+								?>
+		        	
 		        	<br><br>
 				</div>
 				<br><br>

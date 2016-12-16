@@ -131,7 +131,23 @@ class VolunteersController extends AppController
             $userInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
             $datos_mensajes = $this->Volunteers->getMessages($userInfo['id']);
             $this->set('datos_mensajes', $datos_mensajes);
+            debug($datos_mensajes);
         }
+    }
+
+    public function aceptarea($id_tarea){
+        $userInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
+
+        $volunteerTable = TableRegistry::get('Volunteers');
+
+        $query = $volunteerTable->query();
+        $query->update()
+            ->set(['task_id' => $id_tarea])
+            ->where(['id' => $userInfo['id']])
+            ->execute();
+        $this->Flash->success('Tarea aceptada con exito');
+        return $this->redirect(['controller' => 'Volunteers', 'action' => 'index']); 
+
     }
 
 
