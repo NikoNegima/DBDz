@@ -163,7 +163,6 @@ class ManagersController extends AppController
         //Ahora buscamos las tareas que sean de la mision actual
         $mission_tasks = $query->where(['mission_id' => $id_mission['id']]);
 
-
         //Ahora le pasamos a las vistas las variables necesarias
         $this->set(compact('vol'));
         $this->set(compact('mission_tasks'));
@@ -176,6 +175,12 @@ class ManagersController extends AppController
         //Se obtiene el ID del usuario actual
         $userInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
 
+        //Se obtienen todas las regiones
+        $query5 = TableRegistry::get('Regions')->find();
+
+        //Se obtienen todas las emergencias
+        $query4 = TableRegistry::get('Emergencies')->find();
+
         //Se obtienen todos los voluntarios
         $query3 = TableRegistry::get('Volunteers')->find();
 
@@ -185,14 +190,24 @@ class ManagersController extends AppController
         //Consulta a la bd con todas las tareas 
         $query = TableRegistry::get('Tasks')->find();
 
-        //Se buscan los voluntarios disponibles
-        $vol = $query3->where(['disponibility' => 1]);
-
         //Se busca la id de la mision
         $id_mission = $query2->where(['manager_id' => $userInfo['id']])->first();
 
         //Ahora buscamos las tareas que sean de la mision actual
         $mission_tasks = $query->where(['mission_id' => $id_mission['id']]);
+
+        //Se obtiene el ID de la emergencia
+        $id_emer = $id_mission['emergency_id'];
+
+        //Se obtiene la emergencia actual
+        $emergency = $query4->where(['id' => $id_emer])->first();
+
+        //Obtenemos el nombre de la region
+        $area = $query5->where(['id' => $emergency['region_id']])->first();
+        
+        //Se buscan los voluntarios disponibles en el area de la 
+        $vol = $query3->where(['disponibility' => 1])
+                    ->where (['performance_area' => $area['name']]);
 
         //Ahora le pasamos a las vistas las variables necesarias
         $this->set(compact('vol'));
@@ -290,4 +305,4 @@ class ManagersController extends AppController
     }
 
 
-}
+}  

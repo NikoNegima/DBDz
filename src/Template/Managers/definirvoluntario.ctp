@@ -29,7 +29,7 @@
 					<?php foreach ($vol as $voluntario): ?> 	
 						<div class="fila">
 
-							<div class = "elemento" style="width:25%"> <?php echo $voluntario->name; ?> </div>
+							<div class = "elemento" style="width:25%"> <?php echo $voluntario->name . " " . $voluntario->last_name_first; ?> </div>
 							<div class = "elemento" style="width:25%"> <?php echo $voluntario->performance_area; ?> </div>
 							<div class = "elemento" style="width:25%"> <?php echo $voluntario->experience; ?> </div>
 							<div class = "elemento" style="width:25%"> 
