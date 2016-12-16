@@ -37,7 +37,7 @@
 
 							<?php foreach ($vol as $voluntario): ?>
 
-								<div class="elemento" style="width:20%"> <?php echo $voluntario->name; ?></div>
+								<div class="elemento" style="width:20%"> <?php echo $voluntario->name . " " . $voluntario->last_name_first; ?></div>
 								<div class="elemento" style="width:10%"> <?php echo $voluntario->rut_volunteer; ?></div>
 								<div class="elemento" style="width:15%"> <?php echo $voluntario->performance_area; ?></div>
 								<div class="elemento" style="width:20%"> <?php echo $voluntario->actual_ubication; ?></div>

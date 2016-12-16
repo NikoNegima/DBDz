@@ -53,6 +53,7 @@
 			</div>
 		<br><br>
 		<!--Informacion de las tareas! -->
+		<?php if ($vacio=="no"){ ?>
 		<?php foreach ($tasks as $task)?>
 		<div class="row">
 			<div class="col-md-6 text-center">
@@ -70,7 +71,7 @@
 			</div>
 		</div>
 
-		<?php //end foreach ?>
+		<?php } ?>
 </div>
 	
 	

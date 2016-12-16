@@ -34,6 +34,7 @@
 					<label for="" class="control-label">Mensaje:</label>
 					<p><?php echo $dato['detail'] ?></p>
 				</div>
+				<?php if ($dato['subject'] == "solicitud") :?>
 				<div class="col-md-12 text-center">
 					<?= $this->Html->link('Aceptar Solicitud', 
 														['controller' => 'Volunteers', 'action' => 'aceptarea', $dato['task_related']], 
@@ -42,6 +43,7 @@
 		        	
 		        	<br><br>
 				</div>
+			<?php endif; ?>
 				<br><br>
 				<hr style="border:1px solid black">
 			</div>

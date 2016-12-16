@@ -18,7 +18,6 @@
 		5 => 'V',
 		6 => 'VI',
 		7 => 'VII',
-		7 => 'VII',
 		8 => 'VIII',
 		9 => 'IX',
 		10 => 'X',
@@ -30,7 +29,24 @@
 		?>
 		<?= $this->Form->input('phone', ['label' => 'Telefono']); ?>
 		<?= $this->Form->input('mail', ['label' => 'Email']); ?>
-		<?= $this->Form->input('performance_area', ['label' => 'Area de desempeño']); ?>
+		<?= $this->Form->label('Area de desempeño'); ?>
+		<?= $this->Form->select('performance_area', 
+			["I REGION" => 'I', 
+		"II REGION" => 'II',
+		"III REGION" => 'III',
+		"IV REGION" => 'IV', 
+		"V REGION" => 'V',
+		"VI REGION" => 'VI',
+		"VII REGION" => 'VII',
+		"VIII REGION" => 'VIII',
+		"IX REGION" => 'IX',
+		"X REGION" => 'X',
+		"XI REGION" => 'XI',
+		"XII REGION" => 'XII',
+		"METROPOLITANA" => 'RM',
+		"XIV REGION" => 'XIV',
+		"XV REGION" => 'XV'])
+		 ?>
 		<?= $this->Form->input('actual_ubication', ['label' => 'Ubicación actual']); ?>
 
 	</fieldset>

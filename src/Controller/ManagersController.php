@@ -346,15 +346,16 @@ class ManagersController extends AppController
 
         //Se le pasa a las vistas las variables necesarias
         $this->set(compact('hab'));
-        $this->set('id_actual',$eme_id['id']);
+        $this->set('id_actual',$eme_id['emergency_id']);
 
         if($this->request->is('post')){
 
             $emergencies_skillsTable = TableRegistry::get('EmergenciesneedSkills');
             $emergency_skill = $emergencies_skillsTable->newEntity();
 
-            $emergency_skill->emergency_id = $eme_id['id'];
+            $emergency_skill->emergency_id = $eme_id['emergency_id'];
             $emergency_skill->skill_id = $this->request->data['habilidad'];
+
 
             if($emergencies_skillsTable->save($emergency_skill)){
                 $this->Flash->success('Habilidad agregada con exito');

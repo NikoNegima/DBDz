@@ -23,6 +23,12 @@ class VolunteersController extends AppController
     	$this->loadModel("Tasks");
         $tasks = $this->Tasks->getTasks($this->Auth->user('id'));
         $this->set(compact('tasks'));
+        if ($tasks == NULL){
+            $this->set('vacio' , "si");
+        }
+        else{
+            $this->set('vacio', "no");
+        }
     }
 
     
@@ -132,7 +138,7 @@ class VolunteersController extends AppController
             $userInfo = $this->Volunteers->findByUserId($this->Auth->user('id'))->first();
             $datos_mensajes = $this->Volunteers->getMessages($userInfo['id']);
             $this->set('datos_mensajes', $datos_mensajes);
-            debug($datos_mensajes);
+
         }
     }
 

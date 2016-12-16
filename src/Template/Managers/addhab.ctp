@@ -63,6 +63,7 @@ use Cake\ORM\TableRegistry;?>
 										$h = $query2->where(['id' => $q->skill_id])->first();
 										$hnombre = $h->skill_name;
 
+
 										if($eme == $id_actual): ?>
 											<div class="elemento" style="width:33%"><?php echo $hnombre;?></div>
 											<div class="elemento" style="width:33%"><?php echo $q->skill_id;?></div>
