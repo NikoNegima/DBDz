@@ -236,42 +236,6 @@ class ManagersController extends AppController
             
         }
     }
-<<<<<<< HEAD
-=======
-
-    //Método que envia un mensaje desde el encargado a un voluntario
-    public function enviarmensaje()
-    {
-         //Consultando por lo ejecutores posibles (deberian ser los de la misma mision encargado)
-         $this->loadModel('Volunteers');
-         $volunteers = $this->Volunteers->find('all');
-         $this->set(compact('volunteers'));   
-         
-         if($this->request->is('post')){
-
-            $managerInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
-
-            $notificationsTable = TableRegistry::get('Notifications');
-            $notification = $notificationsTable->newEntity();
-
-            $notification->manager_id = $managerInfo['id'];
-            $notification->volunteer_id = $this->request->data['voluntario'];
-            $notification->detail = $this->request->data['msj'];
-            $notification->urgency_level = $this->request->data['gravedad'];
-            $notification->subject = "Mensaje";
-            
-            if($notificationsTable->save($notification)){
-                $this->Flash->success('Mensaje enviado correctamente.');
-                return $this->redirect(['controller' => 'Managers', 'action' => 'index']);
-            }
-            else{
-                
-                $this->Flash->error('No se pudo enviar el mensaje.');
-            }
-
-         }
-
-    }
 
     //Funcion que permite ingresar habilidades aa la emergencia
     public function addHab()
@@ -312,5 +276,5 @@ class ManagersController extends AppController
 
     }
 
->>>>>>> b173d388abde6baa7781467e59199af97ffb2659
+
 }
