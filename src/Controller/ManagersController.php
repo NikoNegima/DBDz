@@ -20,7 +20,20 @@ class ManagersController extends AppController
      */
     public function index()
     {
-        
+        /*
+        if($this->Auth->user('id') != null) {
+            //Query para seleccionar voluntario por user_id
+            $managerInfo = $this->Managers->findByUserId($this->Auth->user('id'))->first();
+            
+
+            $this->loadModel('Missions');
+            $manager_missions = $this->Missions->missionsPerManager($manageInfo['id']); 
+
+            $this->set('manager_missions', $manager_missions);
+
+        } 
+        */
+               
     }
 
     //Para que solo aquellos que tengan la autorizacion requerida puedan acceder a este controlador, creo.
