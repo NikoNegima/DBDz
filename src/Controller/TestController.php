@@ -31,8 +31,9 @@ class TestController extends AppController
     	//poi
 
     	//No rompas nada :^)
-        $this->loadModel('Missions');
-        $missions = $this->Missions->emergenciesWithMissions(1);
+        $this->loadModel('Volunteers');
+        $missions = $this->Volunteers->getMessages(4);
+        debug($missions);
         /*foreach ($missions as $mission) {
             debug($mission);
         }*/

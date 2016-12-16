@@ -5,6 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Datasource\ConnectionManager;
+
 
 /**
  * Volunteers Model
@@ -167,5 +169,18 @@ class VolunteersTable extends Table
             return false;
         }
 
+    }
+
+    //Método que retorna los mensajes que le fueron enviados a un voluntario
+    public function getMessages($id_volunteer){
+
+        $connection = ConnectionManager::get('default');
+        $result = $connection->execute('SELECT m.name, m.last_name_first, n.detail, n.urgency_level
+                                        FROM managers AS m
+                                        INNER JOIN notifications AS n
+                                        ON m.id = n.manager_id
+                                        WHERE n.volunteer_id = :id_volunteer
+                                        AND status = :status', ['id_volunteer' => $id_volunteer, 'status' => 1])->fetchAll('assoc');
+        return $result;
     }
 }
