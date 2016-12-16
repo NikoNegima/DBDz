@@ -177,7 +177,7 @@ CREATE TABLE `missions` (
 
 INSERT INTO `missions` (`id`, `manager_id`, `emergency_id`, `admin_id`, `mission_name`, `volunteer_amount`, `status`) VALUES
 (1, 1, 1, 2, 'rescatar gente', 2, 'en progreso'),
-(3, 1, 9, 1, 'Kill zolezzi', 666, 'En Progreso');
+(3, 1, 9, 1, 'Stop Zolezzi evil schemes', 666, 'En Progreso');
 
 -- --------------------------------------------------------
 
